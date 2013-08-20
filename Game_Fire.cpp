@@ -40,17 +40,17 @@ void draw (int board, Point obgect)
      {
        for (int counterW = 0; counterW < width; counterW++)
          {
-                 if (counterW == obgect.x && counterH == obgect.y)
-                    {
-                    cout << "*";
-                    continue;
-                    }
-                 if (counterW == board && counterH == 5) //height board
-                    {
-                    cout << "_";
-                   continue;
-                    }
-                 cout << "-" ;
+         if (counterW == obgect.x && counterH == obgect.y)
+            {
+            cout << "*";
+            continue;
+            }
+         if (counterW == board && counterH == 5) //height board
+            {
+            cout << "_";
+           continue;
+            }
+         cout << "-" ;
          }
      cout << "\n";
      }
