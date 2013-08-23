@@ -21,7 +21,6 @@ Point::Point(int a, int b)
  
 const int FIELD_HEIGHT = 7;
 const int FIELD_WIDTH = 20;
-
 void draw(const int board, const Point& obgect);
 
 int main()
