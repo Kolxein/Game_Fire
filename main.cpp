@@ -59,3 +59,4 @@ void draw(const int board, const Point& obgect)
 		cout << "\n";
 	}
 }
+
