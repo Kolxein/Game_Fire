@@ -18,9 +18,10 @@ Point::Point(int a, int b)
 	, y(b)
 {
 }
- 
-const int FIELD_HEIGHT = 7;
-const int FIELD_WIDTH = 20;
+const int SIZE_SCALE = 3; 
+const int FIELD_HEIGHT = 7 * SIZE_SCALE;
+const int FIELD_WIDTH = 20 * SIZE_SCALE;
+
 
 void draw(const int board, const Point& obgect);
 
@@ -40,21 +41,35 @@ int main()
 }
 void draw(const int board, const Point& obgect)
 {
-	for (int counterH = 0; counterH < FIELD_HEIGHT; counterH++) 
+	for (int i = 0; i < FIELD_HEIGHT + 2; i++) 
 	{
-		for (int counterW = 0; counterW < FIELD_WIDTH; counterW++)
+		for (int j = 0; j < FIELD_WIDTH + 2; j++)
 		{
-			if (counterW == obgect.x && counterH == obgect.y)
+			if (i == 0 || i == FIELD_HEIGHT + 1)
+			{
+				cout << "#";
+				continue;
+			}
+			if (j == 0 || j == FIELD_WIDTH + 1)
+			{
+				cout << "#";
+				continue;
+			}
+			if (j == obgect.x && i == obgect.y)
 			{
 				cout << "*";
+				cout << "(" << i << ":" << j << ")";
+				j = j + 5;				// korrekt dlin strok
 				continue;
 			}
-			if (counterW == board && counterH == FIELD_HEIGHT - 2)
+			if (j == board + 1 && i == FIELD_HEIGHT - 1 * SIZE_SCALE)
 			{
-				cout << "_";
+				cout << "b__d";
+				cout << "(" << j << ")";
+				j = j + 6;				// korrekt dlin strok
 				continue;
 			}
-			cout << "-" ;
+			cout << " " ;
 		}
 		cout << "\n";
 	}
