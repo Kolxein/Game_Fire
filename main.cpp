@@ -27,7 +27,7 @@ void draw(const int board, const Point& obgect);
 
 int main()
 {
-	int board = 0;
+	int board = 1;
 	Point obgect(1,1);
 	draw(board, obgect);
 	cout<< board << "\n";
@@ -62,11 +62,16 @@ void draw(const int board, const Point& obgect)
 				j = j + 5;				// korrekt dlin strok
 				continue;
 			}
-			if (j == board + 1 && i == FIELD_HEIGHT - 1 * SIZE_SCALE)
+			if (j == board && i == FIELD_HEIGHT - 1 * SIZE_SCALE)
 			{
-				cout << "b__d";
+				cout << "====";
+				j = j + 3;				// korrekt dlin strok
+				continue;
+			}
+			if (j == board && i == FIELD_HEIGHT + 1 - 1 * SIZE_SCALE)
+			{
 				cout << "(" << j << ")";
-				j = j + 6;				// korrekt dlin strok
+				j = j + 2;				// korrekt dlin strok
 				continue;
 			}
 			cout << " " ;
