@@ -1,6 +1,4 @@
-#include <conio.h>
 #include <iostream>
-#include <windows.h>
 
 using namespace std;
 
@@ -35,8 +33,7 @@ int main()
 	cout<< obgect.y << "\n";
 	cout<< "GAME OVER!!!!\n\n";
 	cout<< "Press ENTER to continue...";
-	//cin.get();
-	getch();
+	cin.get();
 	return 0;
 }
 void draw(const int board, const Point& obgect)
