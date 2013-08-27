@@ -25,7 +25,7 @@ void draw(const int board, const Point& obgect);
 
 int main()
 {
-	int board = 1;
+	int board = 42;
 	Point obgect(1,1);
 	draw(board, obgect);
 	cout<< board << "\n";
@@ -67,8 +67,18 @@ void draw(const int board, const Point& obgect)
 			}
 			if (j == board && i == FIELD_HEIGHT + 1 - 1 * SIZE_SCALE)
 			{
+				int n = 1;
+				int f = j;
+				if (j > 9)
+				{
+					while (f > 9)
+					{
+						f = f / 10;
+						n ++;
+					}
+				}
 				cout << "(" << j << ")";
-				j = j + 2;				// korrekt dlin strok
+				j = j + (1 + n);				// korrekt dlin strok
 				continue;
 			}
 			cout << " " ;
