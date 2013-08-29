@@ -22,68 +22,90 @@ const int FIELD_WIDTH = 20 * SIZE_SCALE;
 
 
 void draw(const int board, const Point& obgect);
+int calc_chars (int j);
+void draw_boarder ();
+void draw_fence ();
+void draw_body (const int board, const Point& obgect, int i, int& j);
 
 int main()
 {
-	int board = 42;
-	Point obgect(1,1);
+	int board = 12;
+	Point obgect(15,8);
 	draw(board, obgect);
-	cout<< board << "\n";
-	cout<< obgect.x << "\n";
-	cout<< obgect.y << "\n";
-	cout<< "GAME OVER!!!!\n\n";
+	cout<< "\n\n\n";
 	cout<< "Press ENTER to continue...";
 	cin.get();
 	return 0;
 }
 void draw(const int board, const Point& obgect)
 {
-	for (int i = 0; i < FIELD_HEIGHT + 2; i++) 
+	for (int i = 0; i <= FIELD_HEIGHT + 1; ++i) 
 	{
-		for (int j = 0; j < FIELD_WIDTH + 2; j++)
+		if (i == 0)
 		{
-			if (i == 0 || i == FIELD_HEIGHT + 1)
-			{
-				cout << "#";
-				continue;
-			}
-			if (j == 0 || j == FIELD_WIDTH + 1)
-			{
-				cout << "#";
-				continue;
-			}
-			if (j == obgect.x && i == obgect.y)
-			{
-				cout << "*";
-				cout << "(" << i << ":" << j << ")";
-				j = j + 5;				// korrekt dlin strok
-				continue;
-			}
-			if (j == board && i == FIELD_HEIGHT - 1 * SIZE_SCALE)
-			{
-				cout << "====";
-				j = j + 3;				// korrekt dlin strok
-				continue;
-			}
-			if (j == board && i == FIELD_HEIGHT + 1 - 1 * SIZE_SCALE)
-			{
-				int n = 1;
-				int f = j;
-				if (j > 9)
-				{
-					while (f > 9)
-					{
-						f = f / 10;
-						n ++;
-					}
-				}
-				cout << "(" << j << ")";
-				j = j + (1 + n);				// korrekt dlin strok
-				continue;
-			}
-			cout << " " ;
+			draw_fence ();
+			cout << "\n";
 		}
+		else if (i == FIELD_HEIGHT + 1)
+		{
+			draw_fence ();
+			break;
+		}
+		draw_boarder ();
+		for (int j = 0; j < FIELD_WIDTH ; ++j)
+		{
+			draw_body (board,obgect,i,j);
+		}
+		draw_boarder ();
 		cout << "\n";
 	}
 }
 
+void draw_boarder ()
+{
+	cout << "#";
+}
+
+void draw_fence ()
+{
+	for (int j = 0; j < FIELD_WIDTH + 2; ++j)
+	{
+		draw_boarder ();
+	}
+}
+
+void draw_body (const int board, const Point& obgect, int i, int& j)
+{
+	if (j == obgect.x && i == obgect.y)
+	{
+		cout << "*";
+		cout << "(" << i << ":" << j << ")";
+		int n = calc_chars (i);
+		int m = calc_chars (j);
+		j = j + (4 + n + m);
+	}
+	if (j == board && i == FIELD_HEIGHT - 1 * SIZE_SCALE)
+	{
+		cout << "====";
+		j = j + 4;
+	}
+	if (j == board && i == FIELD_HEIGHT + 1 - 1 * SIZE_SCALE)
+	{
+		int n = calc_chars (j);
+		cout << "(" << j + 2 << ")";
+		j = j + (2 + n);
+	}
+	cout << " " ;
+}
+
+
+int calc_chars (int j)
+{
+	int n = 1;
+	while (j > 9)
+	{
+		j = j / 10;
+		++n;
+	}
+	return n;
+}
