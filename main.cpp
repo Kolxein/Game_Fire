@@ -69,28 +69,24 @@ void draw_fence()
 
 int draw_body(const int board, const Point& obgect, int i, int j)
 {
-	int a = 0;
     if (j == obgect.x && i == obgect.y)
 	{
 		cout << "*";
 		cout << "(" << i << ":" << j << ")";
-		int n = calc_chars(i);
-		int m = calc_chars(j);
-		a = 4 + n + m;
+		return 4 + calc_chars(i) + calc_chars(j);
 	}
 	if (j == board && i == FIELD_HEIGHT - 1 * SIZE_SCALE)
 	{
 		cout << "====";
-		a = 4;
+	    return 4;
 	}
 	if (j == board && i == FIELD_HEIGHT + 1 - 1 * SIZE_SCALE)
 	{
-		int n = calc_chars (j);
 		cout << "(" << j << ")";
-		a = 2 + n;
+		return 2 + calc_chars(j);
 	}
 	cout << " " ;
-    return a;
+	return 1;
 }
 
 
