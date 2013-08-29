@@ -20,7 +20,6 @@ const int SIZE_SCALE = 3;
 const int FIELD_HEIGHT = 7 * SIZE_SCALE;
 const int FIELD_WIDTH = 20 * SIZE_SCALE;
 
-
 void draw(const int board, const Point& obgect);
 int calc_chars(int j);
 void draw_boarder();
@@ -88,7 +87,6 @@ int draw_body(const int board, const Point& obgect, int i, int j)
 	cout << " " ;
 	return 1;
 }
-
 
 int calc_chars(int j)
 {
