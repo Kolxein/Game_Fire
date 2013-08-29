@@ -1,43 +1,8 @@
 #include <iostream>
 #include "point.h"
-//#include "draw.h"
 
 using namespace std;
-
-/*class Point
-{
-public:
-	Point(int a, int b);
-	int x;
-	int y;
-private:
-};*/
-
-Point::Point(int a, int b)
-	: x(a)
-	, y(b)
-{
-}
-const int SIZE_SCALE = 2; 
-const int FIELD_HEIGHT = 7 * SIZE_SCALE;
-const int FIELD_WIDTH = 20 * SIZE_SCALE;
-
-void draw(const int board, const Point& obgect);
-int calc_chars(int j);
-void draw_boarder();
-void draw_fence();
-int draw_body(const int board, const Point& obgect, int i, int j);
-
-int main()
-{
-	int board = 5;
-	Point obgect(11,4);
-	draw(board, obgect);
-	cout<< "\n\n\n";
-	cout<< "Press ENTER to continue...";
-	cin.get();
-	return 0;
-}
+/*
 void draw(const int board, const Point& obgect)
 {
  	draw_fence();
@@ -100,4 +65,4 @@ int calc_chars(int j)
 	}
 	return n;
 }
-
+*/
