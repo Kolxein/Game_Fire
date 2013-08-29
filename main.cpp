@@ -29,7 +29,7 @@ int draw_body(const int board, const Point& obgect, int i, int j);
 int main()
 {
 	int board = 5;
-	Point obgect(15,8);
+	Point obgect(11,4);
 	draw(board, obgect);
 	cout<< "\n\n\n";
 	cout<< "Press ENTER to continue...";
@@ -40,7 +40,7 @@ void draw(const int board, const Point& obgect)
 {
  	draw_fence();
 	cout << "\n";
-	for (int i = 0; i <= FIELD_HEIGHT + 1; ++i) 
+	for (int i = 0; i < FIELD_HEIGHT ; ++i) 
 	{
 		draw_boarder();
 		for (int j = 0; j < FIELD_WIDTH ;)
@@ -74,12 +74,12 @@ int draw_body(const int board, const Point& obgect, int i, int j)
 		cout << "(" << i << ":" << j << ")";
 		return 4 + calc_chars(i) + calc_chars(j);
 	}
-	if (j == board && i == FIELD_HEIGHT - 1 * SIZE_SCALE)
+	if (j == board && i == FIELD_HEIGHT - 2)
 	{
 		cout << "====";
 		return 4;
 	}
-	if (j == board && i == FIELD_HEIGHT + 1 - 1 * SIZE_SCALE)
+	if (j == board && i == FIELD_HEIGHT - 1)
 	{
 		cout << "(" << j << ")";
 		return 2 + calc_chars(j);
