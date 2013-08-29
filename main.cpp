@@ -39,7 +39,7 @@ int main()
 }
 void draw(const int board, const Point& obgect)
 {
- 	draw_fence ();
+ 	draw_fence();
 	cout << "\n";
 	for (int i = 0; i <= FIELD_HEIGHT + 1; ++i) 
 	{
@@ -69,7 +69,7 @@ void draw_fence()
 
 int draw_body(const int board, const Point& obgect, int i, int j)
 {
-    if (j == obgect.x && i == obgect.y)
+	if (j == obgect.x && i == obgect.y)
 	{
 		cout << "*";
 		cout << "(" << i << ":" << j << ")";
@@ -78,7 +78,7 @@ int draw_body(const int board, const Point& obgect, int i, int j)
 	if (j == board && i == FIELD_HEIGHT - 1 * SIZE_SCALE)
 	{
 		cout << "====";
-	    return 4;
+		return 4;
 	}
 	if (j == board && i == FIELD_HEIGHT + 1 - 1 * SIZE_SCALE)
 	{
