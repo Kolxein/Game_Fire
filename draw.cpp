@@ -48,8 +48,8 @@ void draw_fence()
 int draw_body(const int board, const Point& obgect,const Point drawPoint)
 {
 	//drawPoint(drawPoint.x,drawPoint.y);
-	//if (object == drawPoint)
-	if (drawPoint.x == obgect.x && drawPoint.y == obgect.y)
+	if (object == drawPoint)
+	//if (drawPoint.x == obgect.x && drawPoint.y == obgect.y)
 	{
 		cout << "*";
 		cout << "(" << drawPoint.x << ":" << drawPoint.y << ")";
