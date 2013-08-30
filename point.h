@@ -1,4 +1,4 @@
-//#include <iostream>
+#include <iostream>
 #ifndef POINT_H
 #define POINT_H
 
@@ -12,4 +12,5 @@ public:
 	int y;
 private:
 };
+
 #endif

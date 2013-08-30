@@ -1,6 +1,6 @@
 [Project]
-FileName=Game_Fire.dev
-Name=Game_Fire
+FileName=Project.dev
+Name=Project
 UnitCount=5
 Type=1
 Ver=1
@@ -14,11 +14,11 @@ Compiler=
 CppCompiler=
 Linker=
 IsCpp=1
-Icon=Hello.ico
+Icon=
 ExeOutput=
 ObjectOutput=
 OverrideOutput=0
-OverrideOutputName=
+OverrideOutputName=main.exe
 HostApplication=
 Folders=
 CommandLine=
@@ -27,12 +27,12 @@ CustomMakefile=
 IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
-CompilerSettings=
+CompilerSettings=0000000000000000000000
 
 [Unit1]
-FileName=main.cpp
+FileName=..\main.cpp
 CompileCpp=1
-Folder=
+Folder=Project
 Compile=1
 Link=1
 Priority=1000
@@ -58,7 +58,7 @@ ProductVersion=
 AutoIncBuildNr=0
 
 [Unit2]
-FileName=draw.cpp
+FileName=..\point.h
 CompileCpp=1
 Folder=
 Compile=1
@@ -68,7 +68,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit3]
-FileName=point.cpp
+FileName=..\point.cpp
 CompileCpp=1
 Folder=
 Compile=1
@@ -78,7 +78,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit4]
-FileName=draw.h
+FileName=..\draw.h
 CompileCpp=1
 Folder=
 Compile=1
@@ -88,9 +88,9 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit5]
-FileName=point.h
+FileName=..\draw.cpp
 CompileCpp=1
-Folder=
+Folder=Project
 Compile=1
 Link=1
 Priority=1000
