@@ -18,17 +18,16 @@ void draw(const int board, const Point& obgect)
 	draw_fence();
 	cout << "\n";
 	Point drawPoint(0,0);
-	for (int i = 0; i < FIELD_HEIGHT ;)
+	for (drawPoint.y = 0; drawPoint.y < FIELD_HEIGHT ;)
 	{
 		draw_boarder();
-		for (int j = 0; j < FIELD_WIDTH ;)
+		for (drawPoint.x = 0; drawPoint.x < FIELD_WIDTH ;)
 		{
-			j = j + draw_body(board,obgect,drawPoint);
-			drawPoint.y = j;
+			drawPoint.x = drawPoint.x + draw_body(board,obgect,drawPoint);
 		}
 		draw_boarder();
 		cout << "\n";
-		drawPoint.x = ++i;
+		++drawPoint.y;
 	}
 	draw_fence();
 }
@@ -48,21 +47,23 @@ void draw_fence()
 
 int draw_body(const int board, const Point& obgect,const Point drawPoint)
 {
-	if (drawPoint.y == obgect.x && drawPoint.x == obgect.y)
+	//drawPoint(drawPoint.x,drawPoint.y);
+	//if (object == drawPoint)
+	if (drawPoint.x == obgect.x && drawPoint.y == obgect.y)
 	{
 		cout << "*";
-		cout << "(" << drawPoint.y << ":" << drawPoint.x << ")";
-		return 4 + calc_chars(drawPoint.x) + calc_chars(drawPoint.y);
+		cout << "(" << drawPoint.x << ":" << drawPoint.y << ")";
+		return 4 + calc_chars(drawPoint.y) + calc_chars(drawPoint.x);
 	}
-	if (drawPoint.y == board && drawPoint.x == FIELD_HEIGHT - 2)
+	if (drawPoint.x == board && drawPoint.y == FIELD_HEIGHT - 2)
 	{
 		cout << "====";
 		return 4;
 	}
-	if (drawPoint.y == board && drawPoint.x == FIELD_HEIGHT - 1)
+	if (drawPoint.x == board && drawPoint.y == FIELD_HEIGHT - 1)
 	{
-		cout << "(" << drawPoint.y << ")";
-		return 2 + calc_chars(drawPoint.y);
+		cout << "(" << drawPoint.x << ")";
+		return 2 + calc_chars(drawPoint.x);
 	}
 	cout << " " ;
 	return 1;
