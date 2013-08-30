@@ -8,6 +8,11 @@ const int SIZE_SCALE = 2;
 const int FIELD_HEIGHT = 7 * SIZE_SCALE;
 const int FIELD_WIDTH = 20 * SIZE_SCALE;
 
+int calc_chars(int j);
+void draw_boarder();
+void draw_fence();
+int draw_body(const int board, const Point& obgect, int i, int j);
+
 void draw(const int board, const Point& obgect)
 {
 	draw_fence();
