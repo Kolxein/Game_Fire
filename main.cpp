@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
 	int board = 5;
-	Point obgect(4,3);
+	Point obgect(4,6);
 	draw(board, obgect);
 	cout << "\n\n\n";
 	cout << "Press ENTER to continue...";
