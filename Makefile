@@ -4,7 +4,9 @@
 
 program_name=fire
 sources= \
-	main.cpp
+	main.cpp \
+	draw.cpp \
+	point.cpp
 objects=$(sources:.cpp=.o)
 
 link_flags=-stdlib=libc++
