@@ -3,7 +3,6 @@
 #include "point.h"
 #include "draw.h"
 
-
 using namespace std;
 void button(const int& board, const Point& obgect);
 
