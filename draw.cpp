@@ -4,14 +4,14 @@
 
 using namespace std;
 
-const int SIZE_SCALE = 3;
+const int SIZE_SCALE = 2;
 const int FIELD_HEIGHT = 7 * SIZE_SCALE;
 const int FIELD_WIDTH = 20 * SIZE_SCALE;
 
 int calc_chars(int j);
 void draw_boarder();
 void draw_fence();
-int draw_body(const int board, const Point& obgect, const Point drawPoint);
+int draw_body(const int board, const Point& obgect,const Point& drawPoint);
 
 void draw(const int board, const Point& obgect)
 {

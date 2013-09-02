@@ -7,7 +7,7 @@ Point::Point(int a, int b)
 {
 }
 
-bool Point::operator==(const Point& rhs)
+bool Point::operator==(const Point& rhs)const
 {
-	return x == rhs.x && y == rhs.y;
+	return (x == rhs.x && y == rhs.y);
 }

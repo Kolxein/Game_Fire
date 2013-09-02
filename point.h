@@ -5,7 +5,7 @@ class Point
 {
 public:
 	Point(int a, int b);
-	bool operator==(const Point& rhs);
+	bool operator==(const Point& rhs)const;
 	int x;
 	int y;
 private:
