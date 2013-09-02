@@ -18,16 +18,15 @@ void draw(const int board, const Point& obgect)
 	draw_fence();
 	cout << "\n";
 	Point drawPoint(0,0);
-	for (drawPoint.y = 0; drawPoint.y < FIELD_HEIGHT ;)
+	for (drawPoint.y = 0; drawPoint.y < FIELD_HEIGHT ;++drawPoint.y)
 	{
 		draw_boarder();
 		for (drawPoint.x = 0; drawPoint.x < FIELD_WIDTH ;)
 		{
-			drawPoint.x = drawPoint.x + draw_body(board,obgect,drawPoint);
+			drawPoint.x += draw_body(board,obgect,drawPoint);
 		}
 		draw_boarder();
 		cout << "\n";
-		++drawPoint.y;
 	}
 	draw_fence();
 }
