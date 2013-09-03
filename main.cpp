@@ -6,12 +6,20 @@
 #include "user_input.h"
 
 using namespace std;
-void button(const int& board, const Point& obgect, int wait_for_input())
+
+enum Key
+	{
+	    KEY_OTHER = 1,
+	    KEY_LEFT,
+	    KEY_RIGHT,
+	    KEY_ENTER
+	};
+void button(const int& board, const Point& obgect, int wait_for_input(enum Key))
 {
 	bool exit = true;
 	while(exit)
 	{
-		switch (wait_for_input())
+		switch (wait_for_input(Key))
 		{
 		case 1:					//all key
 			cout << "all key\n";
@@ -30,6 +38,7 @@ void button(const int& board, const Point& obgect, int wait_for_input())
 			cout << "Entr\n";
 			exit = false;
 			break;
+		default:cout << "Eror\n";
 		}
 	;}
 }
@@ -39,7 +48,7 @@ int main()
 	int board = 2;
 	Point obgect(3,8);
 	draw(board, obgect);
-	button(board, obgect);
+	button(board, obgect, wait_for_input(Key));
 	cout << "Press ENTER to Exit";
 	cin.get();
 	return 0;
