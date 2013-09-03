@@ -14,7 +14,7 @@ void button(const int& board, const Point& obgect)
 	{
 		switch (wait_for_input())
 		{
-		case KEY_OTHE:					//all key
+		case KEY_OTHER:					//all key
 			cout << "all key\n";
 			break;
 		case KEY_RIGHT:					//right
