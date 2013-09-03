@@ -1,5 +1,4 @@
 #include <iostream>
-#include <conio.h>
 #include <stdlib.h>
 #include "point.h"
 #include "draw.h"
@@ -7,19 +6,13 @@
 
 using namespace std;
 
-enum Key
-	{
-	    KEY_OTHER = 1,
-	    KEY_LEFT,
-	    KEY_RIGHT,
-	    KEY_ENTER
-	};
-void button(const int& board, const Point& obgect, int wait_for_input(enum Key))
+
+void button(const int& board, const Point& obgect, Key wait_for_input())
 {
 	bool exit = true;
 	while(exit)
 	{
-		switch (wait_for_input(Key))
+		switch (wait_for_input())
 		{
 		case 1:					//all key
 			cout << "all key\n";
@@ -48,7 +41,7 @@ int main()
 	int board = 2;
 	Point obgect(3,8);
 	draw(board, obgect);
-	button(board, obgect, wait_for_input(Key));
+	button(board, obgect, wait_for_input());
 	cout << "Press ENTER to Exit";
 	cin.get();
 	return 0;

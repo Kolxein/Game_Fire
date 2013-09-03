@@ -2,15 +2,14 @@
 #include <conio.h>
 #include "user_input.h"
 
-int wait_for_input(enum Key)
+Key wait_for_input()
 {
- 	
 	int key = getch();
 	cout << key << endl;
 	if (key == 75) //left
-	return KEY_LEFT;
+		return KEY_LEFT;
 	if (key == 77) //reagth
-	return KEY_RIGHT;
+		return KEY_RIGHT;
 	if (key == 13) //Enter
-	return KEY_ENTER;
+		return KEY_ENTER;
 }
