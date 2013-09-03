@@ -1,32 +1,32 @@
 #include <iostream>
-//#include <conio.h>
+#include <conio.h>
 #include <stdlib.h>
 #include "point.h"
 #include "draw.h"
+#include "user_input.h"
 
 using namespace std;
-void button(const int& board, const Point& obgect)
+void button(const int& board, const Point& obgect, int wait_for_input())
 {
 	bool exit = true;
 	while(exit)
 	{
-		int key = cin.get();
-		cout << key << endl;
-		//int key = 0;
-		key = cin.get();
-		switch (key)
+		switch (wait_for_input())
 		{
-		case 39:					//right
+		case 1:					//all key
+			cout << "all key\n";
+			break;
+		case 2:					//right
 			system("cls");
 			draw(board, obgect);
 			cout << "right\n";
 			break;
-		case 37:					//left
+		case 3:					//left
 			system("cls");
 			draw(board, obgect);
 			cout << "left\n";
 			break;
-		case 10:
+		case 4:
 			cout << "Entr\n";
 			exit = false;
 			break;
