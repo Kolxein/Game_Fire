@@ -14,20 +14,20 @@ void button(const int& board, const Point& obgect)
 	{
 		switch (wait_for_input())
 		{
-		case 1:					//all key
+		case KEY_OTHE:					//all key
 			cout << "all key\n";
 			break;
-		case 2:					//right
+		case KEY_RIGHT:					//right
 			system("cls");
 			draw(board, obgect);
 			cout << "right\n";
 			break;
-		case 3:					//left
+		case KEY_LEFT:					//left
 			system("cls");
 			draw(board, obgect);
 			cout << "left\n";
 			break;
-		case 4:
+		case KEY_ENTER:
 			cout << "Entr\n";
 			exit = false;
 			break;

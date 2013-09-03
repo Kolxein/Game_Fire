@@ -3,7 +3,7 @@
 
 enum Key
 	{
-		KEY_OTHER = 1,
+		KEY_OTHER,
 		KEY_LEFT,
 		KEY_RIGHT,
 		KEY_ENTER
