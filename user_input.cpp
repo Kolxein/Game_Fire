@@ -5,7 +5,7 @@
 Key wait_for_input()
 {
 	int key = getch();
-	cout << key << endl;
+	//cout << key << endl;
 	if (key == 75) //left
 		return KEY_LEFT;
 	if (key == 77) //reagth

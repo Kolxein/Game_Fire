@@ -7,7 +7,7 @@
 using namespace std;
 
 
-void button(const int& board, const Point& obgect, Key wait_for_input())
+void button(const int& board, const Point& obgect)
 {
 	bool exit = true;
 	while(exit)
@@ -41,7 +41,7 @@ int main()
 	int board = 2;
 	Point obgect(3,8);
 	draw(board, obgect);
-	button(board, obgect, wait_for_input());
+	button(board, obgect);
 	cout << "Press ENTER to Exit";
 	cin.get();
 	return 0;
