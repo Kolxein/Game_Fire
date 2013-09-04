@@ -7,7 +7,7 @@
 using namespace std;
 
 
-void button(const int& board, const Point& obgect)
+void button(const int board, const Point& obgect)
 {
 	bool exit = true;
 	while(exit)
@@ -15,6 +15,8 @@ void button(const int& board, const Point& obgect)
 		switch (wait_for_input())
 		{
 		case KEY_OTHER:					//all key
+			system("cls");
+			draw(board, obgect);
 			cout << "all key\n";
 			break;
 		case KEY_RIGHT:					//right
