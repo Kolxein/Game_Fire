@@ -6,7 +6,6 @@
 
 using namespace std;
 
-
 void button(const int board, const Point& obgect)
 {
 	for ( ; ; )
@@ -14,7 +13,7 @@ void button(const int board, const Point& obgect)
 		string s = "ok";
 		switch (wait_for_input())
 		{
-  		case KEY_ENTER:
+		case KEY_ENTER:
 			s = "Entr\n";
 			return;
 		case KEY_RIGHT:					//right

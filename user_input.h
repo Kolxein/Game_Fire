@@ -10,5 +10,4 @@ enum Key
 	};
 Key wait_for_input();
 
-
 #endif

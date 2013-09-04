@@ -74,11 +74,4 @@ int calc_chars(int j)
 	if (j > 9)
 	return 1+ calc_chars(j/10);
 	else return 1;
-/*	int n = 1;
-	while (j > 9)
-	{
-		j = j / 10;
-		++n;
-	}
-	return n;
-*/}
+}
