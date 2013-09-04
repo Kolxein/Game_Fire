@@ -1,5 +1,5 @@
 #include <iostream>
-#include <stdlib.h>
+#include <string>
 #include "point.h"
 #include "draw.h"
 #include "user_input.h"
@@ -9,32 +9,27 @@ using namespace std;
 
 void button(const int board, const Point& obgect)
 {
-	bool exit = true;
-	while(exit)
+	for ( ; ; )
 	{
+		string s = "ok";
 		switch (wait_for_input())
 		{
-		case KEY_OTHER:					//all key
-			system("cls");
-			draw(board, obgect);
-			cout << "all key\n";
-			break;
+  		case KEY_ENTER:
+			s = "Entr\n";
+			return;
 		case KEY_RIGHT:					//right
-			system("cls");
-			draw(board, obgect);
-			cout << "right\n";
+			s = "right\n";
 			break;
 		case KEY_LEFT:					//left
-			system("cls");
-			draw(board, obgect);
-			cout << "left\n";
+			s = "left\n";
 			break;
-		case KEY_ENTER:
-			cout << "Entr\n";
-			exit = false;
+		case KEY_OTHER:					//all key
+			s = "all key\n";
 			break;
-		default:cout << "Eror\n";
+		default:s = "Eror\n";
 		}
+		draw(board, obgect);
+		cout << s <<"\n"
 	;}
 }
 
@@ -49,4 +44,3 @@ int main()
 	return 0;
 }
 //void button(const int& board, const Point& obgect)
-

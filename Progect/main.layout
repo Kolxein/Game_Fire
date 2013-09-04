@@ -1,8 +1,8 @@
 [Editor_4]
 <<<<<<< HEAD
-CursorCol=15
-CursorRow=32
-TopLine=29
+CursorCol=1
+CursorRow=20
+TopLine=1
 =======
 CursorCol=19
 CursorRow=26
@@ -19,13 +19,13 @@ Open=1
 <<<<<<< HEAD
 Top=1
 CursorCol=1
-CursorRow=21
+CursorRow=31
 =======
 Top=0
 CursorCol=21
 CursorRow=6
 >>>>>>> dff72687502b08ca1da46de770f43247951e2fd5
-TopLine=4
+TopLine=1
 LeftChar=1
 [Editor_1]
 Open=0

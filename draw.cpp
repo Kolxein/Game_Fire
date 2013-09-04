@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 #include "point.h"
 #include "draw.h"
 
@@ -15,6 +16,7 @@ int draw_body(const int board, const Point& obgect,const Point& drawPoint);
 
 void draw(const int board, const Point& obgect)
 {
+	system("cls");					//clining window
 	draw_fence();
 	cout << "\n";
 	Point drawPoint(0,0);
