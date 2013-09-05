@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void button(const int board, const Point& obgect)
+void button(const int board, const Point& man)
 {
 	for (;;)
 	{
@@ -30,7 +30,7 @@ void button(const int board, const Point& obgect)
 			break;
 		}
 		
-		draw(board, obgect);
+		draw(board, man);
 		print(s);
 	}
 }
@@ -38,10 +38,10 @@ void button(const int board, const Point& obgect)
 int main()
 {
 	int board = 2;
-	Point obgect(3,8);
+	Point man(3,8);
 	
-	draw(board, obgect);
-	button(board, obgect);
+	draw(board, man);
+	button(board, man);
 	
 	return 0;
 }

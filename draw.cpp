@@ -12,9 +12,9 @@ const int FIELD_WIDTH = 20 * SIZE_SCALE;
 int calc_chars(int j);
 void draw_boarder();
 void draw_fence();
-int draw_body(const int board, const Point& obgect,const Point& drawPoint);
+int draw_body(const int board, const Point& man,const Point& drawPoint);
 
-void draw(const int board, const Point& obgect)
+void draw(const int board, const Point& man)
 {
 	system("cls");					//clining window
 	draw_fence();
@@ -25,7 +25,7 @@ void draw(const int board, const Point& obgect)
 		draw_boarder();
 		for (drawPoint.x = 0; drawPoint.x < FIELD_WIDTH ;)
 		{
-			drawPoint.x += draw_body(board,obgect,drawPoint);
+			drawPoint.x += draw_body(board,man,drawPoint);
 		}
 		draw_boarder();
 		cout << "\n";
@@ -47,9 +47,9 @@ void draw_fence()
 	}
 }
 
-int draw_body(const int board, const Point& obgect,const Point& drawPoint)
+int draw_body(const int board, const Point& man,const Point& drawPoint)
 {
-	if (obgect == drawPoint)
+	if (man == drawPoint)
 	{
 		cout << "*";
 		cout << "(" << drawPoint.x << ":" << drawPoint.y << ")";

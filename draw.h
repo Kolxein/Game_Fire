@@ -5,7 +5,7 @@
 
 class Point;
 
-void draw(const int board, const Point& obgect);
+void draw(const int board, const Point& man);
 void print(const std::string& msg);
 
 #endif
