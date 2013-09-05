@@ -8,7 +8,6 @@ public:
 	bool operator==(const Point& rhs)const;
 	int x;
 	int y;
-private:
 };
 
 #endif

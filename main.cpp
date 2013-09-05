@@ -8,7 +8,7 @@ using namespace std;
 
 void button(const int board, const Point& obgect)
 {
-	for ( ; ; )
+	for (;;)
 	{
 		string s = "ok";
 		switch (wait_for_input())
@@ -25,21 +25,25 @@ void button(const int board, const Point& obgect)
 		case KEY_OTHER:					//all key
 			s = "all key\n";
 			break;
-		default:s = "Eror\n";
+		default:
+			s = "Eror\n";
+			break;
 		}
+		
 		draw(board, obgect);
-		cout << s <<"\n"
-	;}
+		cout << s << "\n";
+	}
 }
 
 int main()
 {
 	int board = 2;
 	Point obgect(3,8);
+	
 	draw(board, obgect);
 	button(board, obgect);
+	
 	cout << "Press ENTER to Exit";
 	cin.get();
 	return 0;
 }
-//void button(const int& board, const Point& obgect)
