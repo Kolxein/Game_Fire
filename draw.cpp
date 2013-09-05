@@ -75,3 +75,8 @@ int calc_chars(int j)
 	return 1+ calc_chars(j/10);
 	else return 1;
 }
+
+void print(const string& msg)
+{
+	cout << msg << endl;
+}

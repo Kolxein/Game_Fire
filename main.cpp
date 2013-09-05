@@ -14,24 +14,24 @@ void button(const int board, const Point& obgect)
 		switch (wait_for_input())
 		{
 		case Key::EXIT:
-			s = "Exit\n";
+			s = "Exit";
 			return;
 		case Key::RIGHT:					//right
-			s = "right\n";
+			s = "right";
 			break;
 		case Key::LEFT:					//left
-			s = "left\n";
+			s = "left";
 			break;
 		case Key::OTHER:					//all key
-			s = "all key\n";
+			s = "other key";
 			break;
 		default:
-			s = "Eror\n";
+			s = "Eror";
 			break;
 		}
 		
 		draw(board, obgect);
-		cout << s << "\n";
+		print(s);
 	}
 }
 
@@ -43,7 +43,5 @@ int main()
 	draw(board, obgect);
 	button(board, obgect);
 	
-	cout << "Press ENTER to Exit";
-	cin.get();
 	return 0;
 }

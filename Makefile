@@ -11,7 +11,9 @@ sources= \
 	
 objects=$(sources:.cpp=.o)
 
-link_flags=-stdlib=libc++
+link_flags= \
+	-stdlib=libc++ \
+	-lncurses
 compile_flags= \
 	-std=c++11 \
 	-stdlib=libc++ \
