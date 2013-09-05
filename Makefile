@@ -5,12 +5,17 @@
 program_name=fire
 sources= \
 	main.cpp \
-	draw.cpp \
-	point.cpp
+	point.cpp \
+	osx/draw.cpp \
+	osx/user_input.cpp
+	
 objects=$(sources:.cpp=.o)
 
 link_flags=-stdlib=libc++
-compile_flags=-std=c++11 -stdlib=libc++
+compile_flags= \
+	-std=c++11 \
+	-stdlib=libc++ \
+	-I./
 
 all: $(program_name)
 
