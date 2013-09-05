@@ -7,7 +7,8 @@ sources= \
 	main.cpp \
 	point.cpp \
 	osx/draw.cpp \
-	osx/user_input.cpp
+	osx/user_input.cpp \
+	osx/window.cpp
 	
 objects=$(sources:.cpp=.o)
 
