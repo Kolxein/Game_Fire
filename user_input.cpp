@@ -12,10 +12,11 @@ Key wait_for_input()
 		key = getch();
 	}
 	if (key == 75) //left
-		return KEY_LEFT;
+		return Key::LEFT;
 	if (key == 77) //reagth
-		return KEY_RIGHT;
+		return Key::RIGHT;
 	if (key == 13) //Enter
-		return KEY_ENTER;
-	return KEY_OTHER;
+		return Key::EXIT;
+	
+	return Key::OTHER;
 }

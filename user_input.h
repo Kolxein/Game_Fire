@@ -1,12 +1,12 @@
 #ifndef USER_INPUT_H
 #define USER_INPUT_H
 
-enum Key
+enum class Key
 {
-	KEY_OTHER,
-	KEY_LEFT,
-	KEY_RIGHT,
-	KEY_ENTER
+	OTHER = 0,
+	LEFT,
+	RIGHT,
+	EXIT
 };
 
 Key wait_for_input();

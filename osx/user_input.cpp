@@ -2,5 +2,5 @@
 
 Key wait_for_input()
 {
-	return KEY_OTHER;
+	return Key::OTHER;
 }

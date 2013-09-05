@@ -15,6 +15,8 @@
 		C3806B2517D84EF200207C36 /* user_input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = user_input.h; path = ../user_input.h; sourceTree = "<group>"; };
 		C3806B2717D84F3000207C36 /* draw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = draw.cpp; sourceTree = "<group>"; };
 		C3806B2817D84F3000207C36 /* user_input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = user_input.cpp; sourceTree = "<group>"; };
+		C3806B2A17D8542C00207C36 /* draw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = draw.cpp; path = ../draw.cpp; sourceTree = "<group>"; };
+		C3806B2B17D8542C00207C36 /* user_input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = user_input.cpp; path = ../user_input.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -24,6 +26,7 @@
 				C3806B2217D84EF200207C36 /* Makefile */,
 				C3806B1F17D84EDD00207C36 /* common */,
 				C3806B2617D84F0000207C36 /* osx */,
+				C3806B2917D8541B00207C36 /* windows */,
 			);
 			sourceTree = "<group>";
 		};
@@ -46,6 +49,15 @@
 				C3806B2817D84F3000207C36 /* user_input.cpp */,
 			);
 			name = osx;
+			sourceTree = "<group>";
+		};
+		C3806B2917D8541B00207C36 /* windows */ = {
+			isa = PBXGroup;
+			children = (
+				C3806B2A17D8542C00207C36 /* draw.cpp */,
+				C3806B2B17D8542C00207C36 /* user_input.cpp */,
+			);
+			name = windows;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

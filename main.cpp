@@ -13,16 +13,16 @@ void button(const int board, const Point& obgect)
 		string s = "ok";
 		switch (wait_for_input())
 		{
-		case KEY_ENTER:
-			s = "Entr\n";
+		case Key::EXIT:
+			s = "Exit\n";
 			return;
-		case KEY_RIGHT:					//right
+		case Key::RIGHT:					//right
 			s = "right\n";
 			break;
-		case KEY_LEFT:					//left
+		case Key::LEFT:					//left
 			s = "left\n";
 			break;
-		case KEY_OTHER:					//all key
+		case Key::OTHER:					//all key
 			s = "all key\n";
 			break;
 		default:
