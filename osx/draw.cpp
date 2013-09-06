@@ -1,9 +1,9 @@
 #include "./window.h"
 
 ///
-void draw(const int board, const Point& object)
+void draw(const int board, const Point& man)
 {
-	Window::Instance()->Draw(board, object);
+	Window::Instance()->Draw(board, man);
 }
 
 ///

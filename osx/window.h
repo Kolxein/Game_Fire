@@ -11,7 +11,7 @@ public:
 	static Window* Instance();
 	static void RemoveInstance();
 
-	void Draw(const int board, const Point& object);
+	void Draw(const int board, const Point& man);
 	void Print(const std::string& msg);
 	Key WaitForInput();
 

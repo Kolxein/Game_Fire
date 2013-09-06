@@ -97,16 +97,16 @@ inline void Window::DrawSymbol(const Point& p, const char ch)
 }
 
 ///
-void Window::Draw(const int board, const Point& object)
+void Window::Draw(const int board, const Point& man)
 {
 	Clear();
 
 	DrawBorder();
-	DrawObject(object);
+	DrawObject(man);
 	DrawBoard({board, FIELD_HEIGHT - 1});
 
 	printw("Press ENTER to quit...\n");
-	printw("object: (%d, %d)\n", object.x, object.y);
+	printw("object: (%d, %d)\n", man.x, man.y);
 	printw("board position: %d\n", board);
 
 	Refresh();
