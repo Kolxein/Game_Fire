@@ -71,9 +71,10 @@ int draw_body(const int board, const Point& man,const Point& drawPoint)
 
 int calc_chars(int j)
 {
-	if (j > 9)
-	return 1+ calc_chars(j/10);
-	else return 1;
+	//if (j > 9)
+	//return 1+ calc_chars(j/10);
+	//else return 1;
+	return j > 9 ? 1 + calc_chars(j/10) : 1;
 }
 
 void print(const string& msg)
