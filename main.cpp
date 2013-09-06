@@ -6,6 +6,38 @@
 
 using namespace std;
 
+class Man
+{
+public:
+	char simbl = '*';
+	Man(int a, int b, int c, int d);
+	int SetCoord();
+	int SetSize();
+private:
+	int x;
+	int y;
+	int height;
+	int width;
+	
+};
+Man::Man(int a, int b, int c, int d)
+	: x(a)
+	, y(b)
+	, height(c)
+	, width(d)
+{
+}
+int Man::SetCoord()
+{
+	return Man(const int& x,const int& y);
+}
+int Man::SetSize()
+{
+	return Man(const int& height,const int& width);
+}
+
+
+
 void button(const int board, const Point& man)
 {
 	for (;;)
@@ -19,7 +51,7 @@ void button(const int board, const Point& man)
 		case Key::RIGHT:					//right
 			s = "right";
 			break;
-		case Key::LEFT:					//left
+		case Key::LEFT:						//left
 			s = "left";
 			break;
 		case Key::OTHER:					//all key
