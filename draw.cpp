@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "point.h"
 #include "draw.h"
+#include "objects.h"
 
 using namespace std;
 
@@ -12,9 +13,9 @@ const int FIELD_WIDTH = 20 * SIZE_SCALE;
 int calc_chars(int j);
 void draw_boarder();
 void draw_fence();
-int draw_body(const int board, const Point& man,const Point& drawPoint);
+int draw_body(const Objects& board, const Point& oman,const Point& drawPoint);
 
-void draw(const int board, const Point& man)
+void draw(const Objects& board, const Point& oman)
 {
 	system("cls");					//clining window
 	draw_fence();
@@ -25,7 +26,7 @@ void draw(const int board, const Point& man)
 		draw_boarder();
 		for (drawPoint.x = 0; drawPoint.x < FIELD_WIDTH ;)
 		{
-			drawPoint.x += draw_body(board,man,drawPoint);
+			drawPoint.x += draw_body(board,oman,drawPoint);
 		}
 		draw_boarder();
 		cout << "\n";
@@ -47,20 +48,20 @@ void draw_fence()
 	}
 }
 
-int draw_body(const int board, const Point& man,const Point& drawPoint)
+int draw_body(const Objects& board, const Point& oman,const Point& drawPoint)
 {
-	if (man == drawPoint)
+	if (oman == drawPoint)
 	{
 		cout << "*";
 		cout << "(" << drawPoint.x << ":" << drawPoint.y << ")";
 		return 4 + calc_chars(drawPoint.y) + calc_chars(drawPoint.x);
 	}
-	if (drawPoint.x == board && drawPoint.y == FIELD_HEIGHT - 2)
+	if (drawPoint.x == board.GetX() && drawPoint.y == board.GetY() - 2)
 	{
 		cout << "====";
 		return 4;
 	}
-	if (drawPoint.x == board && drawPoint.y == FIELD_HEIGHT - 1)
+	if (drawPoint.x == board.GetX() && drawPoint.y == board.GetY() - 1)
 	{
 		cout << "(" << drawPoint.x << ")";
 		return 2 + calc_chars(drawPoint.x);

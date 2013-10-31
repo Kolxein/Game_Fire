@@ -1,44 +1,15 @@
 #include <iostream>
 #include <string>
 #include "point.h"
+#include "objects.h"
 #include "draw.h"
 #include "user_input.h"
 
 using namespace std;
 
-class Man
-{
-public:
-	char simbl = '*';
-	Man(int a, int b, int c, int d);
-	int SetCoord();
-	int SetSize();
-private:
-	int x;
-	int y;
-	int height;
-	int width;
-	
-};
-Man::Man(int a, int b, int c, int d)
-	: x(a)
-	, y(b)
-	, height(c)
-	, width(d)
-{
-}
-int Man::SetCoord()
-{
-	return Man(const int& x,const int& y);
-}
-int Man::SetSize()
-{
-	return Man(const int& height,const int& width);
-}
 
 
-
-void button(const int board, const Point& man)
+void button(const Objects& board, const Point& oman)
 {
 	for (;;)
 	{
@@ -62,18 +33,21 @@ void button(const int board, const Point& man)
 			break;
 		}
 		
-		draw(board, man);
+		draw(board, oman);
 		print(s);
 	}
 }
 
 int main()
 {
-	int board = 2;
-	Point man(3,8);
+	Objects board(3,11,1,4);
+	Objects Man(3,4,1,1);
+	//int board = 2;
+	Point oboard(board.GetX(), board.GetY());
+	Point oman(Man.GetX(), Man.GetY());
 	
-	draw(board, man);
-	button(board, man);
+	draw(board, oman);
+	button(board, oman);
 	
 	return 0;
 }
