@@ -1,5 +1,6 @@
 #ifndef OBJECTS_H
 #define OBJECTS_H
+#include "point.h"
 
 class Objects
 {
@@ -14,12 +15,13 @@ public:
 	void SetY(int y) {itsY = y;};
 	void SetHeight(int height) {itsHeight = height;};
 	void SetWidth(int width) {itsWidth = width;};
+	
 protected:
 	int itsX;
 	int itsY;
 	int itsHeight;
 	int itsWidth;
-	
+	Point position();
 };
 
 #endif

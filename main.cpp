@@ -9,7 +9,7 @@ using namespace std;
 
 
 
-void button(const Objects& board, const Point& oman)
+void button(const Objects& board, const Objects& Man)
 {
 	for (;;)
 	{
@@ -33,7 +33,7 @@ void button(const Objects& board, const Point& oman)
 			break;
 		}
 		
-		draw(board, oman);
+		draw(board, Man);
 		print(s);
 	}
 }
@@ -44,10 +44,11 @@ int main()
 	Objects Man(3,4,1,1);
 	//int board = 2;
 	Point oboard(board.GetX(), board.GetY());
-	Point oman(Man.GetX(), Man.GetY());
+	//Point positionMan(Man.GetX(), Man.GetY());
+	//Point sizeMan(Man.GetWidth(), Man.GetHeight());
 	
-	draw(board, oman);
-	button(board, oman);
+	draw(board, Man);
+	button(board, Man);
 	
 	return 0;
 }
