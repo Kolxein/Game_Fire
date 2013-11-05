@@ -8,8 +8,7 @@
 using namespace std;
 
 
-
-void button(const Objects& board, const Objects& Man)
+void button(const Objects& Board, const Objects& Man)
 {
 	for (;;)
 	{
@@ -33,22 +32,18 @@ void button(const Objects& board, const Objects& Man)
 			break;
 		}
 		
-		draw(board, Man);
+		draw(Board, Man);
 		print(s);
 	}
 }
 
 int main()
 {
-	Objects board(3,11,1,4);
-	Objects Man(3,4,1,1);
-	//int board = 2;
-	Point oboard(board.GetX(), board.GetY());
-	//Point positionMan(Man.GetX(), Man.GetY());
-	//Point sizeMan(Man.GetWidth(), Man.GetHeight());
+	Objects Board(Point(3,11), Point(1,4));
+	Objects Man(Point(3,1), Point(1,1));
 	
-	draw(board, Man);
-	button(board, Man);
+	draw(Board, Man);
+	button(Board, Man);
 	
 	return 0;
 }

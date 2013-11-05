@@ -2,11 +2,8 @@
 #include "point.h"
 #include "draw.h"
 
-Objects::Objects(int a, int b, int c, int d)
-	: itsX(a)
-	, itsY(b)
-	, itsHeight(c)
-	, itsWidth(d)
+Objects::Objects(const Point& position, const Point& size)
+		: position_(position)
+		, size_(size)
 {
 };
-//Object::position(int itsX, int itsY);
