@@ -50,18 +50,18 @@ void draw_fence()
 
 int draw_body(const Objects& Board, const Objects& Man,const Point& drawPoint)
 {
-	if (Man.position_ == drawPoint)
+	if (Man.GetPosition() == drawPoint)
 	{
 		cout << "*";
 		cout << "(" << drawPoint.x << ":" << drawPoint.y << ")";
 		return 4 + calc_chars(drawPoint.y) + calc_chars(drawPoint.x);
 	}
-	if (drawPoint.x == Board.position_.x && drawPoint.y == Board.position_.y - 2)
+	if (drawPoint.x == Board.GetPosition().x && drawPoint.y == Board.GetPosition().y - 2)
 	{
 		cout << "====";
 		return 4;
 	}
-	if (drawPoint.x == Board.position_.x && drawPoint.y == Board.position_.y - 1)
+	if (drawPoint.x == Board.GetPosition().x && drawPoint.y == Board.GetPosition().y - 1)
 	{
 		cout << "(" << drawPoint.x << ")";
 		return 2 + calc_chars(drawPoint.x);
