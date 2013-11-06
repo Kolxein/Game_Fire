@@ -46,7 +46,9 @@ int main()
 	const int BOARD_POSITION_Y = FIELD_HEIGHT;
 	
 	Objects Board(Point(3,BOARD_POSITION_Y), Point(BOARD_WIDTH,1));
+	Board.simbl = '=';
 	Objects Man(Point(3,1), Point(2,2));
+	//Man.simbl = '*';
 	
 	draw(Board, Man, FIELD_HEIGHT, FIELD_WIDTH);
 	button(Board, Man, FIELD_HEIGHT, FIELD_WIDTH);
