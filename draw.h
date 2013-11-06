@@ -5,9 +5,7 @@
 #include "objects.h"
 #include "point.h"
 
-class Point;
-
-void draw(const Objects& Board, const Objects& Man);
+void draw(const Objects& Board, const Objects& Man, const int& FIELD_HEIGHT, const int& FIELD_WIDTH);
 void print(const std::string& msg);
 
 #endif

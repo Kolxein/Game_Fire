@@ -8,7 +8,8 @@ public:
 	char simbl = '*';
 	Objects(const Point&, const Point&);
 	Point GetPosition() const {return position_;}
-protected:
+	Point GetSize() const {return size_;}
+private:
 	Point position_;
 	Point size_;
 
