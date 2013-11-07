@@ -4,6 +4,7 @@
 #include "objects.h"
 #include "draw.h"
 #include "user_input.h"
+#include "config.h"
 
 using namespace std;
 
@@ -39,7 +40,6 @@ void button(const Objects& Board, const Objects& Man, const int& FIELD_HEIGHT, c
 
 int main()
 {
-	const int SIZE_SCALE = 2;
 	const int BOARD_WIDTH = 8;
 	const int FIELD_HEIGHT = 7 * SIZE_SCALE;
 	const int FIELD_WIDTH = 2 * BOARD_WIDTH * SIZE_SCALE;

@@ -1,9 +1,9 @@
 #include "./window.h"
 #include "point.h"
 #include "objects.h"
+#include "config.h"
 #include <stdlib.h> // for atexit()
 
-const int SIZE_SCALE = 2;
 const int FIELD_HEIGHT = 7 * SIZE_SCALE;
 const int FIELD_WIDTH = 20 * SIZE_SCALE;
 

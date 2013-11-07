@@ -21,6 +21,7 @@
 		C3806B2D17D8D6F400207C36 /* window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = window.h; sourceTree = "<group>"; };
 		C3EF707F182B6A650059B2AD /* objects.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = objects.cpp; path = ../objects.cpp; sourceTree = "<group>"; };
 		C3EF7080182B6A650059B2AD /* objects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = objects.h; path = ../objects.h; sourceTree = "<group>"; };
+		C3EF7081182B722A0059B2AD /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = ../config.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -37,6 +38,7 @@
 		C3806B1F17D84EDD00207C36 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				C3EF7081182B722A0059B2AD /* config.h */,
 				C3EF707F182B6A650059B2AD /* objects.cpp */,
 				C3EF7080182B6A650059B2AD /* objects.h */,
 				C3806B2017D84EF200207C36 /* draw.h */,
