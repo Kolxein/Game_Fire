@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include "point.h"
 #include "draw.h"
-#include "objects.h"
+#include "gameObject.h"
+#include "config.h"
 
 using namespace std;
 
@@ -10,9 +11,9 @@ using namespace std;
 int calc_chars(int j);
 void draw_boarder();
 void draw_fence(const int& FIELD_WIDTH);
-int draw_body(const Objects& Board, const Objects& Man,const Point& drawPoint);
+int draw_body(const GameObject& board, const GameObject& man,const Point& drawPoint);
 
-void draw(const Objects& Board, const Objects& Man, const int& FIELD_HEIGHT, const int& FIELD_WIDTH)
+void draw(const GameObject& board, const GameObject& man)
 {
 	system("cls");					//clining window
 	draw_fence(FIELD_WIDTH);
@@ -23,7 +24,7 @@ void draw(const Objects& Board, const Objects& Man, const int& FIELD_HEIGHT, con
 		draw_boarder();
 		for (drawPoint.x = 0; drawPoint.x < FIELD_WIDTH; )
 		{
-			drawPoint.x += draw_body(Board, Man, drawPoint);
+			drawPoint.x += draw_body(board, man, drawPoint);
 		}
 		draw_boarder();
 		cout << "\n";
@@ -45,40 +46,40 @@ void draw_fence(const int& FIELD_WIDTH)
 	}
 }
 
-int draw_body(const Objects& Board, const Objects& Man,const Point& drawPoint)
+int draw_body(const GameObject& board, const GameObject& man,const Point& drawPoint)
 {
-	if (Man.GetPosition() == drawPoint)
+	if (man.GetPosition() == drawPoint)
 	{
-		for (int n = 0; n < Man.GetSize().x; n++)
+		for (int n = 0; n < man.GetSize().x; n++)
 		{
-			cout << Man.simbl;
+			cout << man.simbl;
 		}
 		cout << "(" << drawPoint.x << ":" << drawPoint.y << ")";
-		return 3 + Man.GetSize().x + calc_chars(drawPoint.y) + calc_chars(drawPoint.x);
+		return 3 + man.GetSize().x + calc_chars(drawPoint.y) + calc_chars(drawPoint.x);
 	}
 	
-	if (Man.GetPosition().x == drawPoint.x 
-		&& drawPoint.y > Man.GetPosition().y 
-		&& (Man.GetSize().y + Man.GetPosition().y) > drawPoint.y)
+	if (man.GetPosition().x == drawPoint.x 
+		&& drawPoint.y > man.GetPosition().y 
+		&& (man.GetSize().y + man.GetPosition().y) > drawPoint.y)
 	{
-		for (int n = 0; n < Man.GetSize().x; n++)
+		for (int n = 0; n < man.GetSize().x; n++)
 		{
-			cout << Man.simbl;
+			cout << man.simbl;
 		}
-		return  Man.GetSize().x;
+		return man.GetSize().x;
 	}
 	
-	if (drawPoint.x == Board.GetPosition().x && drawPoint.y == Board.GetPosition().y - 2)
+	if (drawPoint.x == board.GetPosition().x && drawPoint.y == board.GetPosition().y - 2)
 	{
 		int i = 0;
-		for (i; i < Board.GetSize().x; i++)
+		for (i; i < board.GetSize().x; i++)
 		{
-			cout << Board.simbl;
+			cout << board.simbl;
 		}
 		return i;
 	}
 	
-	if (drawPoint.x == Board.GetPosition().x && drawPoint.y == Board.GetPosition().y - 1)
+	if (drawPoint.x == board.GetPosition().x && drawPoint.y == board.GetPosition().y - 1)
 	{
 		cout << "(" << drawPoint.x << ")";
 		return 2 + calc_chars(drawPoint.x);

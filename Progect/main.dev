@@ -1,7 +1,7 @@
 [Project]
 FileName=main.dev
 Name=Project
-UnitCount=9
+UnitCount=10
 Type=1
 Ver=2
 ObjFiles=
@@ -121,7 +121,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit8]
-FileName=..\objects.h
+FileName=..\gameObject.h
 CompileCpp=1
 Folder=
 Compile=1
@@ -131,9 +131,19 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit9]
-FileName=..\objects.cpp
+FileName=..\gameObject.cpp
 CompileCpp=1
 Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit10]
+FileName=..\config.h
+CompileCpp=1
+Folder=Project
 Compile=1
 Link=1
 Priority=1000

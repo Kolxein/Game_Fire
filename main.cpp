@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include "point.h"
-#include "objects.h"
+#include "gameObject.h"
 #include "draw.h"
 #include "user_input.h"
 #include "config.h"
@@ -9,7 +9,7 @@
 using namespace std;
 
 
-void button(const Objects& Board, const Objects& Man, const int& FIELD_HEIGHT, const int& FIELD_WIDTH)
+void button(const GameObject& board, const GameObject& man)
 {
 	for (;;)
 	{
@@ -33,24 +33,23 @@ void button(const Objects& Board, const Objects& Man, const int& FIELD_HEIGHT, c
 			break;
 		}
 		
-		draw(Board, Man, FIELD_HEIGHT, FIELD_WIDTH);
+		draw(board, man);
 		print(s);
 	}
 }
 
 int main()
 {
-	const int BOARD_WIDTH = 8;
-	const int FIELD_HEIGHT = 7 * SIZE_SCALE;
-	const int FIELD_WIDTH = 2 * BOARD_WIDTH * SIZE_SCALE;
-	const int BOARD_POSITION_Y = FIELD_HEIGHT;
+
 	
-	Objects Board(Point(3,BOARD_POSITION_Y), Point(BOARD_WIDTH,1));
-	Board.simbl = '=';
-	Objects Man(Point(3,1), Point(2,2));
-	//Man.simbl = '*';
+	//GameObject board(Point(3,BOARD_POSITION_Y), Point(BOARD_WIDTH,1));
+	Board board(Point(3,BOARD_POSITION_Y), Point(BOARD_WIDTH,1));
+	//Board board(3);
+	//board.simbl = '=';
+	//GameObject man(Point(3,1), Point(2,2));
+	Man man(Point(3,1), Point(2,1));
 	
-	draw(Board, Man, FIELD_HEIGHT, FIELD_WIDTH);
-	button(Board, Man, FIELD_HEIGHT, FIELD_WIDTH);
+	draw(board, man);
+	button(board, man);
 	return 0;
 }
