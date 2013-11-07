@@ -1,5 +1,6 @@
 #include "./window.h"
 #include "point.h"
+#include "objects.h"
 #include <stdlib.h> // for atexit()
 
 const int SIZE_SCALE = 2;
@@ -76,17 +77,19 @@ inline void Window::DrawBorder()
 }
 
 ///
-inline void Window::DrawObject(const Point& p)
+inline void Window::DrawMan(const Objects& man)
 {
-	DrawSymbol(p, '*');
+	DrawSymbol(man.GetPosition(), man.simbl);
 }
 
 ///
-inline void Window::DrawBoard(const Point& l)
+inline void Window::DrawBoard(const Objects& board)
 {
-	for (int i = 0; i < 4; ++i)
-	{
-		DrawSymbol({l.x + i, l.y}, '=');
+	for (int i = 0; i < board.GetSize().y; ++i) {
+		for (int j = 0; j < board.GetSize().x; ++j) {
+			const Point p = board.GetPosition();
+			DrawSymbol({p.x + j, p.y + i}, board.simbl);
+		}
 	}
 }
 
@@ -97,17 +100,17 @@ inline void Window::DrawSymbol(const Point& p, const char ch)
 }
 
 ///
-void Window::Draw(const int board, const Point& man)
+void Window::Draw(const Objects& board, const Objects& man)
 {
 	Clear();
 
 	DrawBorder();
-	DrawObject(man);
-	DrawBoard({board, FIELD_HEIGHT - 1});
+	DrawMan(man);
+	DrawBoard(board);
 
-	printw("Press ENTER to quit...\n");
-	printw("object: (%d, %d)\n", man.x, man.y);
-	printw("board position: %d\n", board);
+	printw("Press q to quit...\n");
+	printw("man: (%d, %d)\n", man.GetPosition().x, man.GetPosition().y);
+	printw("board position: (%d, %d)\n", board.GetPosition().x, board.GetPosition().y);
 
 	Refresh();
 }

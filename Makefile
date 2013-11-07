@@ -6,6 +6,7 @@ program_name=fire
 sources= \
 	main.cpp \
 	point.cpp \
+	objects.cpp \
 	osx/draw.cpp \
 	osx/user_input.cpp \
 	osx/window.cpp

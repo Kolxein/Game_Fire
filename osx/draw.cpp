@@ -1,7 +1,8 @@
+#include "draw.h"
 #include "./window.h"
 
 ///
-void draw(const int board, const Point& man)
+void draw(const Objects& board, const Objects& man, const int&, const int&)
 {
 	Window::Instance()->Draw(board, man);
 }
