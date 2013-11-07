@@ -43,8 +43,8 @@ int main()
 
 	
 	//GameObject board(Point(3,BOARD_POSITION_Y), Point(BOARD_WIDTH,1));
-	Board board(Point(3,BOARD_POSITION_Y), Point(BOARD_WIDTH,1));
-	//Board board(3);
+	//Board board(Point(3,BOARD_POSITION_Y), Point(BOARD_WIDTH,1));
+	Board board(3);
 	//board.simbl = '=';
 	//GameObject man(Point(3,1), Point(2,2));
 	Man man(Point(3,1), Point(2,1));
