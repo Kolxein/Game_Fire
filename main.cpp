@@ -1,10 +1,16 @@
+
 #include <iostream>
 #include <string>
+
+#include "config.h"
 #include "point.h"
 #include "gameObject.h"
+#include "objectBoard.h"
+#include "objectMan.h"
 #include "draw.h"
 #include "user_input.h"
-#include "config.h"
+
+
 
 using namespace std;
 

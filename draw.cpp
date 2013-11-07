@@ -1,9 +1,13 @@
+#include "draw.h"
+
 #include <iostream>
 #include <stdlib.h>
-#include "point.h"
-#include "draw.h"
-#include "gameObject.h"
+
 #include "config.h"
+#include "point.h"
+#include "gameObject.h"
+
+
 
 using namespace std;
 
