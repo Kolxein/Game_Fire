@@ -3,12 +3,13 @@
 
 #include "gameObject.h"
 #include "point.h"
+#include "size.h"
 
 
 class Man : public GameObject
 {
 	public:
-		Man(const Point&, const Point&);
+		Man(const Point&, const Size&);
 		char simbl = '*';
 };
 

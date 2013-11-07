@@ -3,13 +3,14 @@
 
 #include "gameObject.h"
 #include "point.h"
+#include "size.h"
 
 
 
 class Board : public GameObject
 {
 	public:
-		Board(const Point&, const Point&);
+		Board(const Point&, const Size&);
 		Board(int);
 		char simbl = '=';
 };

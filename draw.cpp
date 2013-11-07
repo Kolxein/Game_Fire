@@ -5,6 +5,7 @@
 
 #include "config.h"
 #include "point.h"
+#include "size.h"
 #include "gameObject.h"
 
 
@@ -14,13 +15,13 @@ using namespace std;
 
 int calc_chars(int j);
 void draw_boarder();
-void draw_fence(const int& FIELD_WIDTH);
+void draw_fence();
 int draw_body(const GameObject& board, const GameObject& man,const Point& drawPoint);
 
 void draw(const GameObject& board, const GameObject& man)
 {
 	system("cls");					//clining window
-	draw_fence(FIELD_WIDTH);
+	draw_fence();
 	cout << "\n";
 	Point drawPoint(0,0);
 	for (drawPoint.y = 0; drawPoint.y < FIELD_HEIGHT ;++drawPoint.y)
@@ -33,7 +34,7 @@ void draw(const GameObject& board, const GameObject& man)
 		draw_boarder();
 		cout << "\n";
 	}
-	draw_fence(FIELD_WIDTH);
+	draw_fence();
 	cout << "\n";
 }
 
@@ -42,7 +43,7 @@ void draw_boarder()
 	cout << "#";
 }
 
-void draw_fence(const int& FIELD_WIDTH)
+void draw_fence()
 {
 	for (int j = 0; j < FIELD_WIDTH + 2; ++j)
 	{
@@ -54,29 +55,29 @@ int draw_body(const GameObject& board, const GameObject& man,const Point& drawPo
 {
 	if (man.GetPosition() == drawPoint)
 	{
-		for (int n = 0; n < man.GetSize().x; n++)
+		for (int n = 0; n < man.GetSize().width ; n++)
 		{
 			cout << man.simbl;
 		}
 		cout << "(" << drawPoint.x << ":" << drawPoint.y << ")";
-		return 3 + man.GetSize().x + calc_chars(drawPoint.y) + calc_chars(drawPoint.x);
+		return 3 + man.GetSize().width + calc_chars(drawPoint.y) + calc_chars(drawPoint.x);
 	}
 	
 	if (man.GetPosition().x == drawPoint.x 
 		&& drawPoint.y > man.GetPosition().y 
-		&& (man.GetSize().y + man.GetPosition().y) > drawPoint.y)
+		&& (man.GetSize().height + man.GetPosition().y) > drawPoint.y)
 	{
-		for (int n = 0; n < man.GetSize().x; n++)
+		for (int n = 0; n < man.GetSize().width; n++)
 		{
 			cout << man.simbl;
 		}
-		return man.GetSize().x;
+		return man.GetSize().width;
 	}
 	
 	if (drawPoint.x == board.GetPosition().x && drawPoint.y == board.GetPosition().y - 2)
 	{
 		int i = 0;
-		for (i; i < board.GetSize().x; i++)
+		for (i; i < board.GetSize().width; i++)
 		{
 			cout << board.simbl;
 		}

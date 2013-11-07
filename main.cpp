@@ -4,6 +4,7 @@
 
 #include "config.h"
 #include "point.h"
+#include "size.h"
 #include "gameObject.h"
 #include "objectBoard.h"
 #include "objectMan.h"
@@ -48,12 +49,12 @@ int main()
 {
 
 	
-	//GameObject board(Point(3,BOARD_POSITION_Y), Point(BOARD_WIDTH,1));
-	//Board board(Point(3,BOARD_POSITION_Y), Point(BOARD_WIDTH,1));
+	//GameObject board(Point(3,BOARD_POSITION_Y), Size(BOARD_WIDTH,1));
+	//Board board(Point(3,BOARD_POSITION_Y), Size(BOARD_WIDTH,1));
 	Board board(3);
 	//board.simbl = '=';
-	//GameObject man(Point(3,1), Point(2,2));
-	Man man(Point(3,1), Point(2,1));
+	//GameObject man(Point(3,1), Size(2,2));
+	Man man(Point(3,1), Size(2,2));
 	
 	draw(board, man);
 	button(board, man);

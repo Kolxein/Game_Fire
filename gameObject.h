@@ -2,18 +2,19 @@
 #define OBJECTS_H
 
 #include "point.h"
+#include "size.h"
 
 
 class GameObject
 {
 public:
 	char simbl = '*';
-	GameObject(const Point&, const Point&);
+	GameObject(const Point&, const Size&);
 	Point GetPosition() const {return position_;}
-	Point GetSize() const {return size_;}
+	Size GetSize() const {return size_;}
 protected:
 	Point position_;
-	Point size_;
+	Size size_;
 
 };
 
