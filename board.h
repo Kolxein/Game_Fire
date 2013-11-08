@@ -1,5 +1,5 @@
-#ifndef OBJECT_BOARD_H
-#define OBJECT_BOARD_H
+#ifndef BOARD_H
+#define BOARD_H
 
 #include "gameObject.h"
 #include "point.h"

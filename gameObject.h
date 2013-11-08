@@ -5,10 +5,10 @@
 #include "size.h"
 
 
+
 class GameObject
 {
 public:
-	char simbl = '*';
 	GameObject(const Point&, const Size&);
 	Point GetPosition() const {return position_;}
 	Size GetSize() const {return size_;}

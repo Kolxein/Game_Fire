@@ -10,15 +10,16 @@
 
 
 
+
 using namespace std;
 
 
 int calc_chars(int j);
 void draw_boarder();
 void draw_fence();
-int draw_body(const GameObject& board, const GameObject& man,const Point& drawPoint);
+int draw_body(const Board& board, const Man& man,const Point& drawPoint);
 
-void draw(const GameObject& board, const GameObject& man)
+void draw(const Board& board, const Man& man)
 {
 	system("cls");					//clining window
 	draw_fence();
@@ -51,7 +52,7 @@ void draw_fence()
 	}
 }
 
-int draw_body(const GameObject& board, const GameObject& man,const Point& drawPoint)
+int draw_body(const Board& board, const Man& man,const Point& drawPoint)
 {
 	if (man.GetPosition() == drawPoint)
 	{

@@ -1,5 +1,5 @@
-#ifndef OBJECT_MAN_H
-#define OBJECT_MAN_H
+#ifndef MAN_H
+#define MAN_H
 
 #include "gameObject.h"
 #include "point.h"

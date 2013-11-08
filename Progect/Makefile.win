@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = ../main.o ../point.o ../draw.o ../user_input.o ../gameObject.o ../objectMan.o ../objectBoard.o ../size.o
-LINKOBJ  = ../main.o ../point.o ../draw.o ../user_input.o ../gameObject.o ../objectMan.o ../objectBoard.o ../size.o
+OBJ      = ../main.o ../point.o ../draw.o ../user_input.o ../gameObject.o ../board.o ../size.o ../man.o
+LINKOBJ  = ../main.o ../point.o ../draw.o ../user_input.o ../gameObject.o ../board.o ../size.o ../man.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -static-libstdc++ -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include"
@@ -40,11 +40,11 @@ $(BIN): $(OBJ)
 ../gameObject.o: ../gameObject.cpp
 	$(CPP) -c ../gameObject.cpp -o ../gameObject.o $(CXXFLAGS)
 
-../objectMan.o: ../objectMan.cpp
-	$(CPP) -c ../objectMan.cpp -o ../objectMan.o $(CXXFLAGS)
-
-../objectBoard.o: ../objectBoard.cpp
-	$(CPP) -c ../objectBoard.cpp -o ../objectBoard.o $(CXXFLAGS)
+../board.o: ../board.cpp
+	$(CPP) -c ../board.cpp -o ../board.o $(CXXFLAGS)
 
 ../size.o: ../size.cpp
 	$(CPP) -c ../size.cpp -o ../size.o $(CXXFLAGS)
+
+../man.o: ../man.cpp
+	$(CPP) -c ../man.cpp -o ../man.o $(CXXFLAGS)

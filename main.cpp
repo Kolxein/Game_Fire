@@ -6,8 +6,8 @@
 #include "point.h"
 #include "size.h"
 #include "gameObject.h"
-#include "objectBoard.h"
-#include "objectMan.h"
+#include "board.h"
+#include "man.h"
 #include "draw.h"
 #include "user_input.h"
 
@@ -16,7 +16,7 @@
 using namespace std;
 
 
-void button(const GameObject& board, const GameObject& man)
+void button(const Board& board, const Man& man)
 {
 	for (;;)
 	{
