@@ -3,7 +3,7 @@
 #include <string>
 
 class Point;
-class Objects;
+class GameObject;
 
 /// Window singleton
 class Window
@@ -12,7 +12,7 @@ public:
 	static Window* Instance();
 	static void RemoveInstance();
 
-	void Draw(const Objects& board, const Objects& man);
+	void Draw(const GameObject& board, const GameObject& man);
 	void Print(const std::string& msg);
 	Key WaitForInput();
 
@@ -22,8 +22,8 @@ private:
 	void Clear();
 	void Refresh();
 	void DrawBorder();
-	void DrawMan(const Objects& man);
-	void DrawBoard(const Objects& board);
+	void DrawMan(const GameObject& man);
+	void DrawBoard(const GameObject& board);
 	void DrawSymbol(const Point& p, const char ch);
 
 	static Window* instance_;

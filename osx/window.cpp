@@ -1,11 +1,8 @@
 #include "./window.h"
 #include "point.h"
-#include "objects.h"
+#include "gameObject.h"
 #include "config.h"
 #include <stdlib.h> // for atexit()
-
-const int FIELD_HEIGHT = 7 * SIZE_SCALE;
-const int FIELD_WIDTH = 20 * SIZE_SCALE;
 
 ///
 Window* Window::instance_ = nullptr;
@@ -77,16 +74,16 @@ inline void Window::DrawBorder()
 }
 
 ///
-inline void Window::DrawMan(const Objects& man)
+inline void Window::DrawMan(const GameObject& man)
 {
 	DrawSymbol(man.GetPosition(), man.simbl);
 }
 
 ///
-inline void Window::DrawBoard(const Objects& board)
+inline void Window::DrawBoard(const GameObject& board)
 {
-	for (int i = 0; i < board.GetSize().y; ++i) {
-		for (int j = 0; j < board.GetSize().x; ++j) {
+	for (int i = 0; i < board.GetSize().height; ++i) {
+		for (int j = 0; j < board.GetSize().width; ++j) {
 			const Point p = board.GetPosition();
 			DrawSymbol({p.x + j, p.y + i}, board.simbl);
 		}
@@ -100,7 +97,7 @@ inline void Window::DrawSymbol(const Point& p, const char ch)
 }
 
 ///
-void Window::Draw(const Objects& board, const Objects& man)
+void Window::Draw(const GameObject& board, const GameObject& man)
 {
 	Clear();
 

@@ -19,9 +19,15 @@
 		C3806B2B17D8542C00207C36 /* user_input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = user_input.cpp; path = ../user_input.cpp; sourceTree = "<group>"; };
 		C3806B2C17D8D6F400207C36 /* window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = window.cpp; sourceTree = "<group>"; };
 		C3806B2D17D8D6F400207C36 /* window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = window.h; sourceTree = "<group>"; };
-		C3EF707F182B6A650059B2AD /* objects.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = objects.cpp; path = ../objects.cpp; sourceTree = "<group>"; };
-		C3EF7080182B6A650059B2AD /* objects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = objects.h; path = ../objects.h; sourceTree = "<group>"; };
 		C3EF7081182B722A0059B2AD /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = ../config.h; sourceTree = "<group>"; };
+		C3EF7084182BEAA40059B2AD /* gameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gameObject.cpp; path = ../gameObject.cpp; sourceTree = "<group>"; };
+		C3EF7085182BEAA40059B2AD /* gameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gameObject.h; path = ../gameObject.h; sourceTree = "<group>"; };
+		C3EF7086182CC1DC0059B2AD /* objectBoard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = objectBoard.cpp; path = ../objectBoard.cpp; sourceTree = "<group>"; };
+		C3EF7087182CC1DC0059B2AD /* objectBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = objectBoard.h; path = ../objectBoard.h; sourceTree = "<group>"; };
+		C3EF7088182CC1DC0059B2AD /* objectMan.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = objectMan.cpp; path = ../objectMan.cpp; sourceTree = "<group>"; };
+		C3EF7089182CC1DC0059B2AD /* objectMan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = objectMan.h; path = ../objectMan.h; sourceTree = "<group>"; };
+		C3EF708A182CC1DC0059B2AD /* size.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = size.cpp; path = ../size.cpp; sourceTree = "<group>"; };
+		C3EF708B182CC1DC0059B2AD /* size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = size.h; path = ../size.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -38,9 +44,15 @@
 		C3806B1F17D84EDD00207C36 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				C3EF7086182CC1DC0059B2AD /* objectBoard.cpp */,
+				C3EF7087182CC1DC0059B2AD /* objectBoard.h */,
+				C3EF7088182CC1DC0059B2AD /* objectMan.cpp */,
+				C3EF7089182CC1DC0059B2AD /* objectMan.h */,
+				C3EF708A182CC1DC0059B2AD /* size.cpp */,
+				C3EF708B182CC1DC0059B2AD /* size.h */,
+				C3EF7084182BEAA40059B2AD /* gameObject.cpp */,
+				C3EF7085182BEAA40059B2AD /* gameObject.h */,
 				C3EF7081182B722A0059B2AD /* config.h */,
-				C3EF707F182B6A650059B2AD /* objects.cpp */,
-				C3EF7080182B6A650059B2AD /* objects.h */,
 				C3806B2017D84EF200207C36 /* draw.h */,
 				C3806B2117D84EF200207C36 /* main.cpp */,
 				C3806B2317D84EF200207C36 /* point.cpp */,

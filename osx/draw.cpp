@@ -2,7 +2,7 @@
 #include "./window.h"
 
 ///
-void draw(const Objects& board, const Objects& man, const int&, const int&)
+void draw(const GameObject& board, const GameObject& man)
 {
 	Window::Instance()->Draw(board, man);
 }
