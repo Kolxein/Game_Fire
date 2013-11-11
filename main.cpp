@@ -15,8 +15,34 @@
 
 using namespace std;
 
+void mooveReat(GameObject& rhs)
+{
+	cout << rhs.GetPosition().x << "\n";
+	if (rhs.GetPosition().x + rhs.GetSize().width >= FIELD_WIDTH)
+	{
+		rhs.SetPosition(FIELD_WIDTH - rhs.GetSize().width);
+	}
+	else if ((rhs.GetPosition().x + rhs.GetSize().width) < FIELD_WIDTH)
+	{
+		rhs.SetPosition(rhs.GetPosition().x + rhs.GetSize().width);
+	}
 
-void button(const Board& board, const Man& man)
+};
+
+void mooveLeft(GameObject& rhs)
+{
+	cout << rhs.GetPosition().x << "\n";
+	if (rhs.GetPosition().x <= 0)
+	{
+		rhs.SetPosition(0);
+	}
+	else if (rhs.GetPosition().x > 0)
+	{
+		rhs.SetPosition(rhs.GetPosition().x - rhs.GetSize().width);
+	}
+};
+
+void button(Board& board, Man& man)
 {
 	for (;;)
 	{
@@ -27,10 +53,12 @@ void button(const Board& board, const Man& man)
 			s = "Exit";
 			return;
 		case Key::RIGHT:					//right
+			mooveReat(board);
 			s = "right";
 			break;
 		case Key::LEFT:						//left
 			s = "left";
+			mooveLeft(board);
 			break;
 		case Key::OTHER:					//all key
 			s = "other key";
