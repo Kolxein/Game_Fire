@@ -18,14 +18,14 @@ Order=-1
 Open=1
 <<<<<<< HEAD
 Top=1
-CursorCol=62
-CursorRow=41
+CursorCol=56
+CursorRow=21
 =======
 Top=0
 CursorCol=21
 CursorRow=6
 >>>>>>> dff72687502b08ca1da46de770f43247951e2fd5
-TopLine=20
+TopLine=15
 LeftChar=1
 [Editor_1]
 Open=0
@@ -67,7 +67,7 @@ CursorRow=3
 TopLine=1
 LeftChar=1
 [Editor_7]
-Open=1
+Open=0
 Top=0
 CursorCol=1
 CursorRow=19
@@ -96,7 +96,7 @@ CursorRow=1
 TopLine=1
 LeftChar=1
 [Editor_11]
-Open=1
+Open=0
 Top=0
 CursorCol=1
 CursorRow=11

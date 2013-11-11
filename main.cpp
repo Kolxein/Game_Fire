@@ -17,12 +17,12 @@ using namespace std;
 
 void mooveReat(GameObject& rhs)
 {
-	cout << rhs.GetPosition().x << "\n";
-	if (rhs.GetPosition().x + rhs.GetSize().width >= FIELD_WIDTH)
+	cout << FIELD_WIDTH;
+	if (rhs.GetPosition().x + (rhs.GetSize().width * 2) >= FIELD_WIDTH)
 	{
 		rhs.SetPosition(FIELD_WIDTH - rhs.GetSize().width);
 	}
-	else if ((rhs.GetPosition().x + rhs.GetSize().width) < FIELD_WIDTH)
+	else if (rhs.GetPosition().x + (rhs.GetSize().width * 2) < FIELD_WIDTH)
 	{
 		rhs.SetPosition(rhs.GetPosition().x + rhs.GetSize().width);
 	}
@@ -31,8 +31,7 @@ void mooveReat(GameObject& rhs)
 
 void mooveLeft(GameObject& rhs)
 {
-	cout << rhs.GetPosition().x << "\n";
-	if (rhs.GetPosition().x <= 0)
+	if (rhs.GetPosition().x - rhs.GetSize().width <= 0)
 	{
 		rhs.SetPosition(0);
 	}
@@ -79,7 +78,7 @@ int main()
 	
 	//GameObject board(Point(3,BOARD_POSITION_Y), Size(BOARD_WIDTH,1));
 	//Board board(Point(3,BOARD_POSITION_Y), Size(BOARD_WIDTH,1));
-	Board board(3);
+	Board board(4);
 	//board.simbl = '=';
 	//GameObject man(Point(3,1), Size(2,2));
 	Man man(Point(3,1), Size(2,2));
