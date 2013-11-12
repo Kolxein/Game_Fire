@@ -12,7 +12,7 @@ public:
 	GameObject(const Point&, const Size&);
 	Point GetPosition() const {return position_;}
 	Size GetSize() const {return size_;}
-	void SetPosition(int x) {position_.x = x;}
+	void SetPosition(int x, int y) {position_.x = x, position_.y = y;}
 protected:
 	Point position_;
 	Size size_;

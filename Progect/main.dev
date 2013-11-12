@@ -1,7 +1,7 @@
 [Project]
 FileName=main.dev
 Name=Project
-UnitCount=16
+UnitCount=18
 Type=1
 Ver=2
 ObjFiles=
@@ -202,6 +202,26 @@ BuildCmd=
 
 [Unit11]
 FileName=..\board.h
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit17]
+FileName=..\move.h
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit18]
+FileName=..\move.cpp
 CompileCpp=1
 Folder=
 Compile=1

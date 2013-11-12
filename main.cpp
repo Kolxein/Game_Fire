@@ -9,37 +9,14 @@
 #include "board.h"
 #include "man.h"
 #include "draw.h"
+#include "move.h"
 #include "user_input.h"
 
 
 
 using namespace std;
 
-void mooveReat(GameObject& rhs)
-{
-	cout << FIELD_WIDTH;
-	if (rhs.GetPosition().x + (rhs.GetSize().width * 2) >= FIELD_WIDTH)
-	{
-		rhs.SetPosition(FIELD_WIDTH - rhs.GetSize().width);
-	}
-	else if (rhs.GetPosition().x + (rhs.GetSize().width * 2) < FIELD_WIDTH)
-	{
-		rhs.SetPosition(rhs.GetPosition().x + rhs.GetSize().width);
-	}
 
-};
-
-void mooveLeft(GameObject& rhs)
-{
-	if (rhs.GetPosition().x - rhs.GetSize().width <= 0)
-	{
-		rhs.SetPosition(0);
-	}
-	else if (rhs.GetPosition().x > 0)
-	{
-		rhs.SetPosition(rhs.GetPosition().x - rhs.GetSize().width);
-	}
-};
 
 void button(Board& board, Man& man)
 {
@@ -52,12 +29,12 @@ void button(Board& board, Man& man)
 			s = "Exit";
 			return;
 		case Key::RIGHT:					//right
-			mooveReat(board);
+			moveReat(board);
 			s = "right";
 			break;
 		case Key::LEFT:						//left
 			s = "left";
-			mooveLeft(board);
+			moveLeft(board);
 			break;
 		case Key::OTHER:					//all key
 			s = "other key";
