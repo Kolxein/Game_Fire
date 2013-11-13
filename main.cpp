@@ -9,7 +9,6 @@
 #include "board.h"
 #include "man.h"
 #include "draw.h"
-#include "move.h"
 #include "user_input.h"
 
 
@@ -29,12 +28,12 @@ void button(Board& board, Man& man)
 			s = "Exit";
 			return;
 		case Key::RIGHT:					//right
-			moveReat(board);
+			board.moveRight();
 			s = "right";
 			break;
 		case Key::LEFT:						//left
 			s = "left";
-			moveLeft(board);
+			board.moveLeft();
 			break;
 		case Key::OTHER:					//all key
 			s = "other key";
