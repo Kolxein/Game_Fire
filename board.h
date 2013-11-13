@@ -2,7 +2,8 @@
 #define BOARD_H
 
 #include "gameObject.h"
-
+#include "point.h"
+#include "size.h"
 
 
 class Board : public GameObject

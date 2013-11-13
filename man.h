@@ -11,6 +11,9 @@ class Man : public GameObject
 	public:
 		Man(const Point&, const Size&);
 		char simbl = '*';
+		void moveRight();
+		void moveLeft();
+		
 };
 
 #endif

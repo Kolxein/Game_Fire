@@ -1,11 +1,6 @@
 #include "board.h"
 
-
 #include "config.h"
-//#include "gameObject.h"
-//#include "point.h"
-//#include "size.h"
-
 
 Board::Board(int rhs)
 	:GameObject(Point(rhs,BOARD_POSITION_Y), Size(BOARD_WIDTH,1))

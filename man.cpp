@@ -1,25 +1,24 @@
 #include "man.h"
 
-
+#include "config.h"
 
 Man::Man(const Point& rhs1, const Size& rhs2)
 	:GameObject(rhs1, rhs2)
 {
 };
-/*
-void moveReat(GameObject& rhs)
+
+void moveRight()
 {
-	if (rhs.GetPosition().x + (rhs.GetSize().width * 2) >= FIELD_WIDTH)
+	if (position_.x + size_.width * 2 >= FIELD_WIDTH)
 	{
-		rhs.SetPosition(FIELD_WIDTH - rhs.GetSize().width, rhs.GetPosition().y);
+		position_.x = FIELD_WIDTH - size_.width;
 	}
-	else if (rhs.GetPosition().x + (rhs.GetSize().width * 2) < FIELD_WIDTH)
+	else if (position_.x + size_.width * 2 < FIELD_WIDTH)
 	{
-		rhs.SetPosition(rhs.GetPosition().x + rhs.GetSize().width, rhs.GetPosition().y);
+		position_.x = position_.x + size_.width;
 	}
-
 };
-
+/*
 void moveLeft(GameObject& rhs)
 {
 	if (rhs.GetPosition().x - rhs.GetSize().width <= 0)

@@ -28,12 +28,12 @@ void button(Board& board, Man& man)
 			s = "Exit";
 			return;
 		case Key::RIGHT:					//right
-			board.moveRight();
+			man.moveRight();
 			s = "right";
 			break;
 		case Key::LEFT:						//left
 			s = "left";
-			board.moveLeft();
+			man.moveLeft();
 			break;
 		case Key::OTHER:					//all key
 			s = "other key";
