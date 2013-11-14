@@ -28,15 +28,16 @@ void button(Board& board, Man& man)
 			s = "Exit";
 			return;
 		case Key::RIGHT:					//right
-			man.moveRight();
+			board.moveRight();
 			s = "right";
 			break;
 		case Key::LEFT:						//left
 			s = "left";
-			man.moveLeft();
+			board.moveLeft();
 			break;
 		case Key::OTHER:					//all key
 			s = "other key";
+			man.move();
 			break;
 		default:
 			s = "Eror";
@@ -52,12 +53,8 @@ int main()
 {
 
 	
-	//GameObject board(Point(3,BOARD_POSITION_Y), Size(BOARD_WIDTH,1));
-	//Board board(Point(3,BOARD_POSITION_Y), Size(BOARD_WIDTH,1));
 	Board board(4);
-	//board.simbl = '=';
-	//GameObject man(Point(3,1), Size(2,2));
-	Man man(Point(3,1), Size(2,2));
+	Man man(Point(0,0), Size(2,2));
 	
 	draw(board, man);
 	button(board, man);

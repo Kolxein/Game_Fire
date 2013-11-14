@@ -1,15 +1,54 @@
 #include "man.h"
 
+using namespace std;
+#include <iostream>
+
+#include <math.h>
 #include "config.h"
 
 Man::Man(const Point& rhs1, const Size& rhs2)
 	:GameObject(rhs1, rhs2)
 {
-};
+}
 
-void moveRight()
+void Man::move()
 {
-	if (position_.x + size_.width * 2 >= FIELD_WIDTH)
+	int step = 6;  //volni
+	int cosYgla = cos(position_.x * 180 * step / FIELD_WIDTH * (3.14 / 180) - 90) * 3 * SIZE_SCALE + 3 * SIZE_SCALE;
+	position_.y = cosYgla;
+	position_.x++;
+/*	if (cosYgla < FIELD_HEIGHT / 2)
+	{
+		if (position_.y != cosYgla)
+		{
+			position_.y++;
+		}
+		else 
+		{
+			position_.y++;
+			position_.x++;
+		}
+	}
+	if (cosYgla > FIELD_HEIGHT / 2)
+	{
+		if (position_.y != cosYgla)
+		{
+			position_.y--;
+		}
+		else 
+		{
+			position_.y--;
+			position_.x++;
+		}
+	}
+*/
+
+
+}
+
+void Man::moveRight()
+{
+	if ( + size_.width * 2 >= FIELD_WIDTH)
 	{
 		position_.x = FIELD_WIDTH - size_.width;
 	}
@@ -17,20 +56,20 @@ void moveRight()
 	{
 		position_.x = position_.x + size_.width;
 	}
-};
-/*
-void moveLeft(GameObject& rhs)
-{
-	if (rhs.GetPosition().x - rhs.GetSize().width <= 0)
-	{
-		rhs.SetPosition(0, rhs.GetPosition().y);
-	}
-	else if (rhs.GetPosition().x > 0)
-	{
-		rhs.SetPosition(rhs.GetPosition().x - rhs.GetSize().width, rhs.GetPosition().y);
-	}
-};
+}
 
+void Man::moveLeft()
+{
+	if (position_.x - size_.width <= 0)
+	{
+		position_.x = 0;
+	}
+	else if (position_.x > 0)
+	{
+		position_.x = position_.x - size_.width;
+	}
+}
+/*
 void moveTop(GameObject& rhs)
 {
 	if (rhs.GetPosition().y - rhs.GetSize().height <= 0)

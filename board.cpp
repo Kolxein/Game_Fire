@@ -5,9 +5,9 @@
 Board::Board(int rhs)
 	:GameObject(Point(rhs,BOARD_POSITION_Y), Size(BOARD_WIDTH,1))
 {
-};
+}
 
-void moveRight()
+void Board::moveRight()
 {
 	if (position_.x + size_.width * 2 >= FIELD_WIDTH)
 	{
@@ -17,10 +17,9 @@ void moveRight()
 	{
 		position_.x = position_.x + size_.width;
 	}
+}
 
-};
-
-void moveLeft()
+void Board::moveLeft()
 {
 	if (position_.x - size_.width <= 0)
 	{
@@ -30,4 +29,4 @@ void moveLeft()
 	{
 		position_.x = position_.x - size_.width;
 	}
-};
+}
