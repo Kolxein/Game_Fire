@@ -13,8 +13,8 @@ Man::Man(const Point& rhs1, const Size& rhs2)
 
 void Man::move()
 {
-	int step = 6;  //volni
-	int cosYgla = cos(position_.x * 180 * step / FIELD_WIDTH * (3.14 / 180) - 90) * 3 * SIZE_SCALE + 3 * SIZE_SCALE;
+	int step = 10;  //volni
+	int cosYgla = cos(position_.x * 180 / step * (3.14 / 180) - 160) * 3 * SIZE_SCALE + 3 * SIZE_SCALE;
 	position_.y = cosYgla;
 	position_.x++;
 /*	if (cosYgla < FIELD_HEIGHT / 2)
