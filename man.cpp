@@ -13,36 +13,26 @@ Man::Man(const Point& rhs1, const Size& rhs2)
 
 void Man::move()
 {
-	int step = 10;  //volni
-	int cosYgla = cos(position_.x * 180 / step * (3.14 / 180) - 160) * 3 * SIZE_SCALE + 3 * SIZE_SCALE;
-	position_.y = cosYgla;
-	position_.x++;
-/*	if (cosYgla < FIELD_HEIGHT / 2)
+	int step_1 = 4 * SIZE_SCALE; //volni
+	int cosYgla_1 = cos(position_.x * 180 / step_1 * (3.14 / 180) + 10) * 3 * SIZE_SCALE + 3 * SIZE_SCALE;
+	int cosYgla_2 = cos(position_.x * 180 / step_1 * (3.14 / 180) + 5) * 2 * SIZE_SCALE + 4 * SIZE_SCALE;
+	int cosYgla_3 = cos(position_.x * 180 / step_1 * (3.14 / 180) + 5) * 1 * SIZE_SCALE + 5 * SIZE_SCALE;
+	
+	
+	if (position_.x < 6 * SIZE_SCALE)
 	{
-		if (position_.y != cosYgla)
-		{
-			position_.y++;
-		}
-		else 
-		{
-			position_.y++;
-			position_.x++;
-		}
+		position_.y = cosYgla_1;
 	}
-	if (cosYgla > FIELD_HEIGHT / 2)
+	if (position_.x < 11 * SIZE_SCALE && position_.x > 6 * SIZE_SCALE)
 	{
-		if (position_.y != cosYgla)
-		{
-			position_.y--;
-		}
-		else 
-		{
-			position_.y--;
-			position_.x++;
-		}
+		position_.y = cosYgla_2;
 	}
-*/
+	if (position_.x < FIELD_WIDTH && position_.x > 11 * SIZE_SCALE)
+	{
+		position_.y = cosYgla_3;
+	}
 
+	position_.x++;
 
 }
 

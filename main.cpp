@@ -53,8 +53,8 @@ int main()
 {
 
 	
-	Board board(4);
-	Man man(Point(0,0), Size(2,2));
+	Board board(0);
+	Man man(Point(0,0), Size(1,1));
 	
 	draw(board, man);
 	button(board, man);
