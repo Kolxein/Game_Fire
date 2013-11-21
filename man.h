@@ -12,9 +12,7 @@ class Man : public GameObject
 		Man(const Point&, const Size&);
 		char simbl = '*';
 		void move();
-		void moveRight();
-		void moveLeft();
-		
+		void moveKill();
 };
 
 #endif
