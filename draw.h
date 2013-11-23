@@ -8,7 +8,7 @@
 #include "man.h"
 
 
-void draw(const Board& board, const Man& man);
+void draw(const Board& board, const Man& man, int, int);
 void print(const std::string& msg);
 
 #endif

@@ -58,10 +58,9 @@ void Man::move()
 		position_.x++;
 		return;
 	}
-
 }
 
-void Man::moveKill()
+void Man::moveDed()
 {
 	position_.y = position_.y + 2;
 }

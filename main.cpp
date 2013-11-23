@@ -11,11 +11,33 @@
 #include "draw.h"
 #include "user_input.h"
 
+int kill = 0;
+int ekspa = 0;
 
 
 using namespace std;
 
-
+int collizia(Board& board, Man& man)
+{
+	if (man.GetPosition().x == 4 && board.GetPosition().x != 0 
+		|| man.GetPosition().x == 12 && board.GetPosition().x != BOARD_WIDTH 
+		|| man.GetPosition().x == 18 && board.GetPosition().x != BOARD_WIDTH * 2)
+	{
+		man.moveDed();
+		kill++;
+		draw(board, man, kill, ekspa);
+		man.SetPosition(0,0);
+	}
+	else 
+	{
+		man.move();
+		if (man.GetPosition().x == FIELD_WIDTH - 1)
+		{
+			ekspa++;
+			man.SetPosition(0,0);
+		}
+	}
+}
 
 void button(Board& board, Man& man)
 {
@@ -37,26 +59,24 @@ void button(Board& board, Man& man)
 			break;
 		case Key::OTHER:					//all key
 			s = "other key";
-			man.move();
+			collizia(board,man);
 			break;
 		default:
 			s = "Eror";
 			break;
 		}
 		
-		draw(board, man);
+		draw(board, man, kill, ekspa);
 		print(s);
 	}
 }
 
 int main()
 {
-
-	
 	Board board(0);
 	Man man(Point(0,0), Size(1,1));
 	
-	draw(board, man);
+	draw(board, man, kill, ekspa);
 	button(board, man);
 	return 0;
 }

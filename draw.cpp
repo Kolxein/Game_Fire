@@ -19,9 +19,10 @@ void draw_boarder();
 void draw_fence();
 int draw_body(const Board& board, const Man& man,const Point& drawPoint);
 
-void draw(const Board& board, const Man& man)
+void draw(const Board& board, const Man& man, int kill, int ekspa)
 {
 	system("cls");					//clining window
+	cout << "ekspa   " << ekspa << "   kill   " << kill<<"\n";
 	draw_fence();
 	cout << "\n";
 	Point drawPoint(0,0);
