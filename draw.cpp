@@ -17,9 +17,9 @@ using namespace std;
 int calc_chars(int j);
 void draw_boarder();
 void draw_fence();
-int draw_body(const Board& board, const Man& man,const Point& drawPoint);
+int draw_body(const Board& board, const Man& mens[], int number_of_elements ,const Point& drawPoint);
 
-void draw(const Board& board, const Man& man, int kill, int ekspa)
+void draw(const Board& board, const Man& mens[], int number_of_elements, int kill, int ekspa)
 {
 	system("cls");					//clining window
 	cout << "ekspa   " << ekspa << "   kill   " << kill<<"\n";
@@ -31,7 +31,7 @@ void draw(const Board& board, const Man& man, int kill, int ekspa)
 		draw_boarder();
 		for (drawPoint.x = 0; drawPoint.x < FIELD_WIDTH; )
 		{
-			drawPoint.x += draw_body(board, man, drawPoint);
+			drawPoint.x += draw_body(board, mens[3], drawPoint);
 		}
 		draw_boarder();
 		cout << "\n";
@@ -53,7 +53,7 @@ void draw_fence()
 	}
 }
 
-int draw_body(const Board& board, const Man& man,const Point& drawPoint)
+int draw_body(const Board& board, const Man& mens[], int number_of_elements, const Point& drawPoint)
 {
 	if (man.GetPosition() == drawPoint)
 	{
@@ -107,3 +107,4 @@ void print(const string& msg)
 {
 	cout << msg << endl;
 }
+

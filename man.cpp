@@ -11,6 +11,11 @@ Man::Man(const Point& rhs1, const Size& rhs2)
 {
 }
 
+Man::Man()
+	:GameObject(Point(0, 0),Size(1, 1))
+{
+}
+
 void Man::move()
 {
 	if (position_.x <= 3 * SIZE_SCALE)

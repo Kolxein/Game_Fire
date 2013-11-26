@@ -9,6 +9,7 @@
 class Man : public GameObject
 {
 	public:
+		Man();
 		Man(const Point&, const Size&);
 		char simbl = '*';
 		void move();

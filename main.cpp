@@ -17,11 +17,11 @@ int ekspa = 0;
 
 using namespace std;
 
-int collizia(Board& board, Man& man)
+int collizia(Board& board, Man& mens[], int number_of_elements)
 {
-	if (man.GetPosition().x == 4 && board.GetPosition().x != 0 
-		|| man.GetPosition().x == 12 && board.GetPosition().x != BOARD_WIDTH 
-		|| man.GetPosition().x == 18 && board.GetPosition().x != BOARD_WIDTH * 2)
+	if (mens[1].GetPosition().x == 4 && board.GetPosition().x != 0
+		|| mens[1].GetPosition().x == 12 && board.GetPosition().x != BOARD_WIDTH 
+		|| mens[1].GetPosition().x == 18 && board.GetPosition().x != BOARD_WIDTH * 2)
 	{
 		man.moveDed();
 		kill++;
@@ -39,7 +39,7 @@ int collizia(Board& board, Man& man)
 	}
 }
 
-void button(Board& board, Man& man)
+void button(Board& board, Man& mens[], int number_of_elements)
 {
 	for (;;)
 	{
@@ -59,14 +59,14 @@ void button(Board& board, Man& man)
 			break;
 		case Key::OTHER:					//all key
 			s = "other key";
-			collizia(board,man);
+			collizia(board, mens[], 3);
 			break;
 		default:
 			s = "Eror";
 			break;
 		}
 		
-		draw(board, man, kill, ekspa);
+		draw(board, mens[], 3, kill, ekspa);
 		print(s);
 	}
 }
@@ -74,9 +74,11 @@ void button(Board& board, Man& man)
 int main()
 {
 	Board board(0);
-	Man man(Point(0,0), Size(1,1));
-	
-	draw(board, man, kill, ekspa);
-	button(board, man);
+	Man mens[3];// {(Point(0,0), Size(1,1)), (Point(1,1), Size(1,1)), (Point(2,2), Size(1,1))};
+	mens[1].SetPosition(0, 0);
+	mens[2].SetPosition(1, 1);
+	mens[3].SetPosition(2, 2);
+	draw(board, mens[], 3, kill, ekspa);
+	button(board, mens[], 3);
 	return 0;
 }
