@@ -17,29 +17,32 @@ int ekspa = 0;
 
 using namespace std;
 
-int collizia(Board& board, Man& mens[], int number_of_elements)
+int collizia(Board& board, Man mens[3])
 {
-	if (mens[1].GetPosition().x == 4 && board.GetPosition().x != 0
-		|| mens[1].GetPosition().x == 12 && board.GetPosition().x != BOARD_WIDTH 
-		|| mens[1].GetPosition().x == 18 && board.GetPosition().x != BOARD_WIDTH * 2)
+	for (int i = 0; i < 3; i++)
 	{
-		man.moveDed();
-		kill++;
-		draw(board, man, kill, ekspa);
-		man.SetPosition(0,0);
-	}
-	else 
-	{
-		man.move();
-		if (man.GetPosition().x == FIELD_WIDTH - 1)
+		if (mens[i].GetPosition().x == 4 && board.GetPosition().x != 0
+			|| mens[i].GetPosition().x == 12 && board.GetPosition().x != BOARD_WIDTH 
+			|| mens[i].GetPosition().x == 18 && board.GetPosition().x != BOARD_WIDTH * 2)
 		{
-			ekspa++;
-			man.SetPosition(0,0);
+			mens[i].moveDed();
+			kill++;
+			draw(board, mens[3], kill, ekspa);
+			mens[i].SetPosition(0,0);
+		}
+		else
+		{
+			mens[i].move();
+			if (mens[i].GetPosition().x == FIELD_WIDTH - 1)
+			{
+				ekspa++;
+				mens[i].SetPosition(0,0);
+			}
 		}
 	}
 }
 
-void button(Board& board, Man& mens[], int number_of_elements)
+void button(Board& board, Man mens[3])
 {
 	for (;;)
 	{
@@ -59,14 +62,14 @@ void button(Board& board, Man& mens[], int number_of_elements)
 			break;
 		case Key::OTHER:					//all key
 			s = "other key";
-			collizia(board, mens[], 3);
+			collizia(board, mens[3]);
 			break;
 		default:
 			s = "Eror";
 			break;
 		}
 		
-		draw(board, mens[], 3, kill, ekspa);
+		draw(board, mens[3], kill, ekspa);
 		print(s);
 	}
 }
@@ -78,7 +81,7 @@ int main()
 	mens[1].SetPosition(0, 0);
 	mens[2].SetPosition(1, 1);
 	mens[3].SetPosition(2, 2);
-	draw(board, mens[], 3, kill, ekspa);
-	button(board, mens[], 3);
+	draw(board, mens[3], kill, ekspa);
+	button(board, mens[3]);
 	return 0;
 }
