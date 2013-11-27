@@ -9,24 +9,18 @@ Board::Board(int rhs)
 
 void Board::moveRight()
 {
-	if (position_.x + size_.width * 2 >= FIELD_WIDTH)
+	if (position_.x * 2 > 23 * SIZE_SCALE)
 	{
-		position_.x = FIELD_WIDTH - size_.width;
+		position_.x = 18 * SIZE_SCALE;
 	}
-	else if (position_.x + size_.width * 2 < FIELD_WIDTH)
-	{
-		position_.x = position_.x + size_.width;
-	}
+	else position_.x = 12 * SIZE_SCALE;
 }
 
 void Board::moveLeft()
 {
-	if (position_.x - size_.width <= 0)
+	if (position_.x / 2 < 7 * SIZE_SCALE)
 	{
-		position_.x = 0;
+		position_.x = 4 * SIZE_SCALE;
 	}
-	else if (position_.x > 0)
-	{
-		position_.x = position_.x - size_.width;
-	}
+	else position_.x = 12 * SIZE_SCALE;
 }

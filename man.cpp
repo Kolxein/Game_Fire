@@ -18,46 +18,52 @@ Man::Man()
 
 void Man::move()
 {
-	if (position_.x <= 3 * SIZE_SCALE)
+	if (position_.x == 0)
+	{
+		position_.x++;
+		return;
+	}
+	
+	if (0 * SIZE_SCALE < position_.x && position_.x <= 4 * SIZE_SCALE)
 	{
 		position_.y++;
 		position_.x++;
 		return;
 	}
 
-	if (3 * SIZE_SCALE < position_.x && position_.x < 8 * SIZE_SCALE)
+	if (4 * SIZE_SCALE < position_.x && position_.x < 9 * SIZE_SCALE)
 	{
 		position_.y--;
 		position_.x++;
 		return;
 	}
-	if (8 * SIZE_SCALE <= position_.x && position_.x <= 11 * SIZE_SCALE)
+	if (9 * SIZE_SCALE <= position_.x && position_.x <= 12 * SIZE_SCALE)
 	{
 		position_.y++;
 		position_.x++;
 		return;
 	}
 
-	if (11 * SIZE_SCALE < position_.x && position_.x < 15 * SIZE_SCALE)
+	if (12 * SIZE_SCALE < position_.x && position_.x < 16 * SIZE_SCALE)
 	{
 		position_.y--;
 		position_.x++;
 		return;
 	}
-	if (15 * SIZE_SCALE <= position_.x && position_.x <= 17 * SIZE_SCALE)
+	if (16 * SIZE_SCALE <= position_.x && position_.x <= 18 * SIZE_SCALE)
 	{
 		position_.y++;
 		position_.x++;
 		return;
 	}
 
-	if (17 * SIZE_SCALE < position_.x && position_.x < 20 * SIZE_SCALE)
+	if (18 * SIZE_SCALE < position_.x && position_.x < 21 * SIZE_SCALE)
 	{
 		position_.y--;
 		position_.x++;
 		return;
 	}
-	if (20 * SIZE_SCALE <= position_.x && position_.x < 21 * SIZE_SCALE)
+	if (21 * SIZE_SCALE <= position_.x && position_.x < 23 * SIZE_SCALE)
 	{
 		position_.y++;
 		position_.x++;

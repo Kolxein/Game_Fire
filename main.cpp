@@ -21,28 +21,26 @@ int collizia(Board& board, Man mens[])
 {
 	for (int i = 0; i < 3; i++)
 	{
-		if (mens[i].GetPosition().x == 4 && board.GetPosition().x != 0
-			|| mens[i].GetPosition().x == 12 && board.GetPosition().x != BOARD_WIDTH 
-			|| mens[i].GetPosition().x == 18 && board.GetPosition().x != BOARD_WIDTH * 2)
+			
+		if (mens[i].GetPosition().x == 23 * SIZE_SCALE )
+		{
+			ekspa++;
+			mens[i].SetPosition(0,0);
+		}
+		if (mens[i].GetPosition().x == 5 * SIZE_SCALE && board.GetPosition().x != 4 * SIZE_SCALE
+			|| mens[i].GetPosition().x == 13 * SIZE_SCALE && board.GetPosition().x != 12 * SIZE_SCALE
+			|| mens[i].GetPosition().x == 19 * SIZE_SCALE && board.GetPosition().x != 18 * SIZE_SCALE)
 		{
 			mens[i].moveDed();
 			kill++;
 			draw(board, mens, kill, ekspa);
 			mens[i].SetPosition(0,0);
 		}
-		else
-		{
-			mens[i].move();
-			if (mens[i].GetPosition().x == FIELD_WIDTH - 1)
-			{
-				ekspa++;
-				mens[i].SetPosition(0,0);
-			}
-		}
+		mens[i].move();
 	}
 }
 
-void button(Board& board, Man mens[3])
+void button(Board& board, Man mens[])
 {
 	for (;;)
 	{

@@ -87,13 +87,13 @@ int draw_body(const Board& board, Man mens[], const Point& drawPoint)
 			}
 			return i;
 		}
-		
+		/*
 		if (drawPoint.x == board.GetPosition().x && drawPoint.y == board.GetPosition().y - 1)
 		{
 			cout << "(" << drawPoint.x << ")";
 			return 2 + calc_chars(drawPoint.x);
 		}
-		
+		*/
 		
 	}
 	cout << " ";
