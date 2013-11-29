@@ -16,7 +16,7 @@ Man::Man()
 {
 }
 
-void Man::move()
+void Man::moveStep1()
 {
 	if (position_.x == 0)
 	{
@@ -31,6 +31,21 @@ void Man::move()
 		return;
 	}
 
+	if (18 * SIZE_SCALE < position_.x && position_.x < 21 * SIZE_SCALE)
+	{
+		position_.y--;
+		position_.x++;
+		return;
+	}
+	if (21 * SIZE_SCALE <= position_.x && position_.x < 23 * SIZE_SCALE)
+	{
+		position_.y++;
+		position_.x++;
+		return;
+	}
+}
+void Man::moveStep2()
+{
 	if (4 * SIZE_SCALE < position_.x && position_.x < 9 * SIZE_SCALE)
 	{
 		position_.y--;
@@ -43,7 +58,10 @@ void Man::move()
 		position_.x++;
 		return;
 	}
+}
 
+void Man::moveStep3()
+{
 	if (12 * SIZE_SCALE < position_.x && position_.x < 16 * SIZE_SCALE)
 	{
 		position_.y--;
@@ -51,19 +69,6 @@ void Man::move()
 		return;
 	}
 	if (16 * SIZE_SCALE <= position_.x && position_.x <= 18 * SIZE_SCALE)
-	{
-		position_.y++;
-		position_.x++;
-		return;
-	}
-
-	if (18 * SIZE_SCALE < position_.x && position_.x < 21 * SIZE_SCALE)
-	{
-		position_.y--;
-		position_.x++;
-		return;
-	}
-	if (21 * SIZE_SCALE <= position_.x && position_.x < 23 * SIZE_SCALE)
 	{
 		position_.y++;
 		position_.x++;

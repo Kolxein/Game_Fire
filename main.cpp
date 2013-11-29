@@ -13,7 +13,7 @@
 
 int kill = 0;
 int ekspa = 0;
-
+int drawShek = 1;
 
 using namespace std;
 
@@ -36,10 +36,21 @@ int collizia(Board& board, Man mens[])
 			draw(board, mens, kill, ekspa);
 			mens[i].SetPosition(0,0);
 		}
-		mens[i].move();
+		if (drawShek == 1)
+		{
+			mens[i].moveStep1();
+		}
+		if (drawShek == 2)
+		{
+			mens[i].moveStep2();
+		}
+		if (drawShek == 3)
+		{
+			mens[i].moveStep3();
+		}
 	}
+	drawShek < 3 ? drawShek++ : drawShek = 1;
 }
-
 void button(Board& board, Man mens[])
 {
 	for (;;)
