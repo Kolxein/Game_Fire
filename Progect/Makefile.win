@@ -1,17 +1,17 @@
 # Project: Project
 # Makefile created by Dev-C++ 5.4.2
 
-CPP      = g++.exe
-CC       = gcc.exe
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
 OBJ      = ../main.o ../point.o ../draw.o ../user_input.o ../gameObject.o ../board.o ../size.o ../man.o
 LINKOBJ  = ../main.o ../point.o ../draw.o ../user_input.o ../gameObject.o ../board.o ../size.o ../man.o
-LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -static-libstdc++ -static-libgcc
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -static-libstdc++ -static-libgcc -g3
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include"
 BIN      = main.exe
-CXXFLAGS = $(CXXINCS) -std=c++11
-CFLAGS   = $(INCS) -std=c++11
+CXXFLAGS = $(CXXINCS) -std=c++11 -g3
+CFLAGS   = $(INCS) -std=c++11 -g3
 RM       = rm -f
 
 .PHONY: all all-before all-after clean clean-custom

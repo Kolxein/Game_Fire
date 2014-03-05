@@ -17,9 +17,9 @@ using namespace std;
 int calc_chars(int j);
 void draw_boarder();
 void draw_fence();
-int draw_body(const Board& board, Man mens[],const Point& drawPoint);
+int draw_body(const Board& board, std::vector<Man>& vMen,const Point& drawPoint);
 
-void draw(const Board& board, Man mens[], int kill, int ekspa)
+void draw(const Board& board, std::vector<Man>& vMen, int kill, int ekspa)
 {
 	system("cls");					//clining window
 	cout << "ekspa   " << ekspa << "   kill   " << kill<<"\n";
@@ -31,7 +31,7 @@ void draw(const Board& board, Man mens[], int kill, int ekspa)
 		draw_boarder();
 		for (drawPoint.x = 0; drawPoint.x < FIELD_WIDTH; )
 		{
-			drawPoint.x += draw_body(board, mens, drawPoint);
+			drawPoint.x += draw_body(board, vMen, drawPoint);
 		}
 		draw_boarder();
 		cout << "\n";
@@ -53,29 +53,29 @@ void draw_fence()
 	}
 }
 
-int draw_body(const Board& board, Man mens[], const Point& drawPoint)
+int draw_body(const Board& board, std::vector<Man>& vMen, const Point& drawPoint)
 {
-	for (int m = 0; m < 3; m++)
+	for (int m = 0; m < vMen.size(); m++)
 	{
-		if (mens[m].GetPosition() == drawPoint)
+		if (vMen.at(m).GetPosition() == drawPoint)
 		{
-			for (int n = 0; n < mens[m].GetSize().width ; n++)
+			for (int n = 0; n < vMen.at(m).GetSize().width ; n++)
 			{
-				cout << mens[m].simbl;
+				cout << vMen.at(m).simbl;
 			}
 			//cout << "(" << drawPoint.x << ":" << drawPoint.y << ")";
 			return 1; //3 + mens[m].GetSize().width + calc_chars(drawPoint.y) + calc_chars(drawPoint.x);
 		}
 		
-		if (mens[m].GetPosition().x == drawPoint.x 
-			&& drawPoint.y > mens[m].GetPosition().y 
-			&& (mens[m].GetSize().height + mens[m].GetPosition().y) > drawPoint.y)
+		if (vMen.at(m).GetPosition().x == drawPoint.x 
+			&& drawPoint.y > vMen.at(m).GetPosition().y 
+			&& (vMen.at(m).GetSize().height + vMen.at(m).GetPosition().y) > drawPoint.y)
 		{
-			for (int n = 0; n < mens[m].GetSize().width; n++)
+			for (int n = 0; n < vMen.at(m).GetSize().width; n++)
 			{
-				cout << mens[m].simbl;
+				cout << vMen.at(m).simbl;
 			}
-			return mens[m].GetSize().width;
+			return vMen.at(m).GetSize().width;
 		}
 		
 		if (drawPoint.x == board.GetPosition().x && drawPoint.y == board.GetPosition().y - 2)
